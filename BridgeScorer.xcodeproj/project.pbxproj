@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DBB4B1F199094590065087D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B1E199094590065087D /* Foundation.framework */; };
+		8DBB4B21199094590065087D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B20199094590065087D /* CoreGraphics.framework */; };
+		8DBB4B23199094590065087D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B22199094590065087D /* UIKit.framework */; };
+		8DBB4B29199094590065087D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DBB4B27199094590065087D /* InfoPlist.strings */; };
+		8DBB4B2B199094590065087D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B2A199094590065087D /* main.m */; };
+		8DBB4B2F199094590065087D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B2E199094590065087D /* AppDelegate.m */; };
+		8DBB4B32199094590065087D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBB4B30199094590065087D /* Main.storyboard */; };
+		8DBB4B35199094590065087D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B34199094590065087D /* ViewController.m */; };
+		8DBB4B37199094590065087D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBB4B36199094590065087D /* Images.xcassets */; };
+		8DBB4B3E199094590065087D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B3D199094590065087D /* XCTest.framework */; };
+		8DBB4B3F199094590065087D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B1E199094590065087D /* Foundation.framework */; };
+		8DBB4B40199094590065087D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B22199094590065087D /* UIKit.framework */; };
+		8DBB4B48199094590065087D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DBB4B46199094590065087D /* InfoPlist.strings */; };
+		8DBB4B4A199094590065087D /* BridgeScorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B49199094590065087D /* BridgeScorerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DBB4B41199094590065087D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DBB4B13199094590065087D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DBB4B1A199094590065087D;
+			remoteInfo = BridgeScorer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8DBB4B1B199094590065087D /* BridgeScorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeScorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBB4B1E199094590065087D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8DBB4B20199094590065087D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8DBB4B22199094590065087D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8DBB4B26199094590065087D /* BridgeScorer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BridgeScorer-Info.plist"; sourceTree = "<group>"; };
+		8DBB4B28199094590065087D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8DBB4B2A199094590065087D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8DBB4B2C199094590065087D /* BridgeScorer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BridgeScorer-Prefix.pch"; sourceTree = "<group>"; };
+		8DBB4B2D199094590065087D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8DBB4B2E199094590065087D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8DBB4B31199094590065087D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DBB4B33199094590065087D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8DBB4B34199094590065087D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8DBB4B36199094590065087D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8DBB4B3C199094590065087D /* BridgeScorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridgeScorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBB4B3D199094590065087D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8DBB4B45199094590065087D /* BridgeScorerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BridgeScorerTests-Info.plist"; sourceTree = "<group>"; };
+		8DBB4B47199094590065087D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8DBB4B49199094590065087D /* BridgeScorerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeScorerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DBB4B18199094590065087D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B21199094590065087D /* CoreGraphics.framework in Frameworks */,
+				8DBB4B23199094590065087D /* UIKit.framework in Frameworks */,
+				8DBB4B1F199094590065087D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DBB4B39199094590065087D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B3E199094590065087D /* XCTest.framework in Frameworks */,
+				8DBB4B40199094590065087D /* UIKit.framework in Frameworks */,
+				8DBB4B3F199094590065087D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8DBB4B12199094590065087D = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B24199094590065087D /* BridgeScorer */,
+				8DBB4B43199094590065087D /* BridgeScorerTests */,
+				8DBB4B1D199094590065087D /* Frameworks */,
+				8DBB4B1C199094590065087D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8DBB4B1C199094590065087D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B1B199094590065087D /* BridgeScorer.app */,
+				8DBB4B3C199094590065087D /* BridgeScorerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DBB4B1D199094590065087D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B1E199094590065087D /* Foundation.framework */,
+				8DBB4B20199094590065087D /* CoreGraphics.framework */,
+				8DBB4B22199094590065087D /* UIKit.framework */,
+				8DBB4B3D199094590065087D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DBB4B24199094590065087D /* BridgeScorer */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B2D199094590065087D /* AppDelegate.h */,
+				8DBB4B2E199094590065087D /* AppDelegate.m */,
+				8DBB4B30199094590065087D /* Main.storyboard */,
+				8DBB4B33199094590065087D /* ViewController.h */,
+				8DBB4B34199094590065087D /* ViewController.m */,
+				8DBB4B36199094590065087D /* Images.xcassets */,
+				8DBB4B25199094590065087D /* Supporting Files */,
+			);
+			path = BridgeScorer;
+			sourceTree = "<group>";
+		};
+		8DBB4B25199094590065087D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B26199094590065087D /* BridgeScorer-Info.plist */,
+				8DBB4B27199094590065087D /* InfoPlist.strings */,
+				8DBB4B2A199094590065087D /* main.m */,
+				8DBB4B2C199094590065087D /* BridgeScorer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DBB4B43199094590065087D /* BridgeScorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B49199094590065087D /* BridgeScorerTests.m */,
+				8DBB4B44199094590065087D /* Supporting Files */,
+			);
+			path = BridgeScorerTests;
+			sourceTree = "<group>";
+		};
+		8DBB4B44199094590065087D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DBB4B45199094590065087D /* BridgeScorerTests-Info.plist */,
+				8DBB4B46199094590065087D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DBB4B1A199094590065087D /* BridgeScorer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DBB4B4D199094590065087D /* Build configuration list for PBXNativeTarget "BridgeScorer" */;
+			buildPhases = (
+				8DBB4B17199094590065087D /* Sources */,
+				8DBB4B18199094590065087D /* Frameworks */,
+				8DBB4B19199094590065087D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BridgeScorer;
+			productName = BridgeScorer;
+			productReference = 8DBB4B1B199094590065087D /* BridgeScorer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DBB4B3B199094590065087D /* BridgeScorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DBB4B50199094590065087D /* Build configuration list for PBXNativeTarget "BridgeScorerTests" */;
+			buildPhases = (
+				8DBB4B38199094590065087D /* Sources */,
+				8DBB4B39199094590065087D /* Frameworks */,
+				8DBB4B3A199094590065087D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DBB4B42199094590065087D /* PBXTargetDependency */,
+			);
+			name = BridgeScorerTests;
+			productName = BridgeScorerTests;
+			productReference = 8DBB4B3C199094590065087D /* BridgeScorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DBB4B13199094590065087D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jeffrey Ching";
+				TargetAttributes = {
+					8DBB4B3B199094590065087D = {
+						TestTargetID = 8DBB4B1A199094590065087D;
+					};
+				};
+			};
+			buildConfigurationList = 8DBB4B16199094590065087D /* Build configuration list for PBXProject "BridgeScorer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DBB4B12199094590065087D;
+			productRefGroup = 8DBB4B1C199094590065087D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DBB4B1A199094590065087D /* BridgeScorer */,
+				8DBB4B3B199094590065087D /* BridgeScorerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DBB4B19199094590065087D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B37199094590065087D /* Images.xcassets in Resources */,
+				8DBB4B29199094590065087D /* InfoPlist.strings in Resources */,
+				8DBB4B32199094590065087D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DBB4B3A199094590065087D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B48199094590065087D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DBB4B17199094590065087D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B35199094590065087D /* ViewController.m in Sources */,
+				8DBB4B2F199094590065087D /* AppDelegate.m in Sources */,
+				8DBB4B2B199094590065087D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DBB4B38199094590065087D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBB4B4A199094590065087D /* BridgeScorerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DBB4B42199094590065087D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DBB4B1A199094590065087D /* BridgeScorer */;
+			targetProxy = 8DBB4B41199094590065087D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8DBB4B27199094590065087D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DBB4B28199094590065087D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8DBB4B30199094590065087D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DBB4B31199094590065087D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DBB4B46199094590065087D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DBB4B47199094590065087D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DBB4B4B199094590065087D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8DBB4B4C199094590065087D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DBB4B4E199094590065087D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BridgeScorer/BridgeScorer-Prefix.pch";
+				INFOPLIST_FILE = "BridgeScorer/BridgeScorer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8DBB4B4F199094590065087D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BridgeScorer/BridgeScorer-Prefix.pch";
+				INFOPLIST_FILE = "BridgeScorer/BridgeScorer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8DBB4B51199094590065087D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BridgeScorer.app/BridgeScorer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BridgeScorer/BridgeScorer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BridgeScorerTests/BridgeScorerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8DBB4B52199094590065087D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BridgeScorer.app/BridgeScorer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BridgeScorer/BridgeScorer-Prefix.pch";
+				INFOPLIST_FILE = "BridgeScorerTests/BridgeScorerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DBB4B16199094590065087D /* Build configuration list for PBXProject "BridgeScorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DBB4B4B199094590065087D /* Debug */,
+				8DBB4B4C199094590065087D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DBB4B4D199094590065087D /* Build configuration list for PBXNativeTarget "BridgeScorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DBB4B4E199094590065087D /* Debug */,
+				8DBB4B4F199094590065087D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8DBB4B50199094590065087D /* Build configuration list for PBXNativeTarget "BridgeScorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DBB4B51199094590065087D /* Debug */,
+				8DBB4B52199094590065087D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DBB4B13199094590065087D /* Project object */;
+}
