@@ -1,18 +1,19 @@
 //
-//  BridgeScorerTests.m
-//  BridgeScorerTests
+//  GameScorerTests.m
+//  BridgeScorer
 //
-//  Created by Jeffrey Ching on 8/4/14.
+//  Created by Jeffrey Ching on 8/11/14.
 //  Copyright (c) 2014 Jeffrey Ching. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "GameScorer.h"
 
-@interface BridgeScorerTests : XCTestCase
+@interface GameScorerTests : XCTestCase
 
 @end
 
-@implementation BridgeScorerTests
+@implementation GameScorerTests
 
 - (void)setUp
 {
@@ -26,9 +27,12 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testMadeContract
 {
-//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    GameState gs;
+    gs.northVulnerable = NO;
+    gs.eastVulnerable = NO;
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end
