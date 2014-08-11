@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CardSuit.h"
 #import "GameState.h"
-#import "GameScore.h"
 #import "BridgeContract.h"
 #import "ContractOutcome.h"
 

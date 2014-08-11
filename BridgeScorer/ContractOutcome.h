@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameState.h"
-#import "GameScorer.h"
+#import "GameScore.h"
 
 @interface ContractOutcome : NSObject
 

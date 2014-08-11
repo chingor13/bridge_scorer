@@ -13,4 +13,6 @@
 @property BOOL northVulnerable;
 @property BOOL eastVulnerable;
 
+- (id) initFromGameState:(GameState *)gameState;
+
 @end

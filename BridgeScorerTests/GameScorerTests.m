@@ -29,10 +29,15 @@
 
 - (void)testMadeContract
 {
-    GameState gs;
-    gs.northVulnerable = NO;
-    gs.eastVulnerable = NO;
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    GameState *gs = [[GameState alloc] init];
+    BridgeContract *contract = [[BridgeContract alloc] init];
+    contract.bid = 3;
+    contract.suit = CardSuitClubs;
+    contract.tricksMade = 10;
+    
+    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    XCTAssertEqual(60, outcome.gameScore.offenseBelowLine, @"Failed");
+    XCTAssertEqual(20, outcome.gameScore.offenseAboveLine, @"Failed");
 }
 
 @end

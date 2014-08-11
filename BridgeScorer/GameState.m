@@ -20,4 +20,14 @@
     return self;
 }
 
+- (id) initFromGameState:(GameState *)gameState
+{
+    self = [super init];
+    self.northPointsOn = gameState.northPointsOn;
+    self.eastPointsOn = gameState.eastPointsOn;
+    self.northVulnerable = gameState.northVulnerable;
+    self.eastVulnerable = gameState.eastVulnerable;
+    return self;
+}
+
 @end

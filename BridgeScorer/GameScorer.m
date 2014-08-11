@@ -13,7 +13,7 @@
 + (ContractOutcome *) calculateGameScore:(BridgeContract *)contract inGameState:(GameState *)currentGameState
 {
     GameScore *gameScore = [[GameScore alloc] init];
-    GameState *gameState = [currentGameState copy];
+    GameState *gameState = [[GameState alloc] initFromGameState:currentGameState];
     
     NSInteger firstTrickPoints = 20;
     NSInteger otherTrickPoints = 20;
