@@ -10,4 +10,9 @@
 
 @interface BridgeRoundView : UIView
 
+@property (strong, nonatomic) NSArray *topLeftScores;
+@property (strong, nonatomic) NSArray *topRightScores;
+@property (strong, nonatomic) NSArray *bottomLeftScores;
+@property (strong, nonatomic) NSArray *bottomRightScores;
+
 @end

@@ -10,6 +10,7 @@
 #import "BridgeRoundView.h"
 
 @interface GameViewController ()
+@property (weak, nonatomic) IBOutlet BridgeRoundView *gameView;
 @end
 
 @implementation GameViewController
@@ -25,7 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+    
+    // Testing
+    self.gameView.topLeftScores = @[[NSNumber numberWithInt:30],
+                                    [NSNumber numberWithInt:40]];
+    
+    self.gameView.topRightScores = @[[NSNumber numberWithInt:50],
+                                     [NSNumber numberWithInt:100]];
+    
+    self.gameView.bottomLeftScores = @[[NSNumber numberWithInt:100],
+                                       [NSNumber numberWithInt:30]];
+    
+    self.gameView.bottomRightScores = @[[NSNumber numberWithInt:60]];
 }
 
 /*

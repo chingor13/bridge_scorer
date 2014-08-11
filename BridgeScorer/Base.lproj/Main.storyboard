@@ -56,6 +56,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gameView" destination="ok8-mS-CwN" id="KG9-3w-hk5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw4-Wf-Bh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
