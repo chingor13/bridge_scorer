@@ -64,6 +64,12 @@
                 }
                 gameState.northVulnerable = NO;
                 gameState.eastVulnerable = NO;
+            } else {
+                if(contract.north) {
+                    gameState.northVulnerable = YES;
+                } else {
+                    gameState.eastVulnerable = YES;
+                }
             }
             gameState.northPointsOn = 0;
             gameState.eastPointsOn = 0;

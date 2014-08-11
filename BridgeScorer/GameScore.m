@@ -19,4 +19,9 @@
     return self;
 }
 
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"GameScore: %ld/%ld vs %ld", (long)self.offenseAboveLine, (long)self.offenseBelowLine, (long)self.defenseAboveLine];
+}
+
 @end

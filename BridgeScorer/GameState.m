@@ -30,4 +30,18 @@
     return self;
 }
 
+- (NSString *) boolString:(BOOL)boolean
+{
+    return boolean ? @"true" : @"false";
+}
+
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"GameState: %ld/%ld %@/%@",
+            (long)self.northPointsOn,
+            (long)self.eastPointsOn,
+            [self boolString:self.northVulnerable],
+            [self boolString:self.eastVulnerable]];
+}
+
 @end

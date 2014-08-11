@@ -17,4 +17,10 @@
     self.gameScore = gameScore;
     return self;
 }
+
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"ContractOutcome: %@ %@", self.gameScore, self.gameState];
+}
+
 @end

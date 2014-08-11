@@ -27,7 +27,7 @@
     [super tearDown];
 }
 
-- (void)testMadeContract
+- (void)testClubsMadeContract
 {
     GameState *gs = [[GameState alloc] init];
     BridgeContract *contract = [[BridgeContract alloc] init];
@@ -38,6 +38,34 @@
     ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
     XCTAssertEqual(60, outcome.gameScore.offenseBelowLine, @"Failed");
     XCTAssertEqual(20, outcome.gameScore.offenseAboveLine, @"Failed");
+}
+
+- (void)testDiamondsMadeContract
+{
+    GameState *gs = [[GameState alloc] init];
+    BridgeContract *contract = [[BridgeContract alloc] init];
+    contract.bid = 3;
+    contract.suit = CardSuitDiamonds;
+    contract.tricksMade = 10;
+    
+    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    XCTAssertEqual(60, outcome.gameScore.offenseBelowLine, @"Failed");
+    XCTAssertEqual(20, outcome.gameScore.offenseAboveLine, @"Failed");
+}
+
+- (void) testNoTrumpMadeContract
+{
+    GameState *gs = [[GameState alloc] init];
+    BridgeContract *contract = [[BridgeContract alloc] init];
+    contract.bid = 3;
+    contract.suit = CardSuitNoTrump;
+    contract.tricksMade = 10;
+    
+    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    XCTAssertEqual(100, outcome.gameScore.offenseBelowLine, @"Failed");
+    XCTAssertEqual(30, outcome.gameScore.offenseAboveLine, @"Failed");
+    XCTAssert(outcome.gameState.northVulnerable, @"Expected north to be vulnerable");
+    XCTAssertEqual(0, outcome.gameState.northPointsOn, @"Expected to have no points on after a made game");
 }
 
 @end
