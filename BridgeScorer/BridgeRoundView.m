@@ -19,25 +19,25 @@
     return self;
 }
 
-- (void)setTopLeftScores:(NSArray *)topLeftScores
+- (void)setTopLeftScores:(NSMutableArray *)topLeftScores
 {
     _topLeftScores = topLeftScores;
     [self setNeedsDisplay];
 }
 
-- (void)setTopRightScores:(NSArray *)topRightScores
+- (void)setTopRightScores:(NSMutableArray *)topRightScores
 {
     _topRightScores = topRightScores;
     [self setNeedsDisplay];
 }
 
-- (void)setBottomLeftScores:(NSArray *)bottomLeftScores
+- (void)setBottomLeftScores:(NSMutableArray *)bottomLeftScores
 {
     _bottomLeftScores = bottomLeftScores;
     [self setNeedsDisplay];
 }
 
-- (void)setBottomRightScores:(NSArray *)bottomRightScores
+- (void)setBottomRightScores:(NSMutableArray *)bottomRightScores
 {
     _bottomRightScores = bottomRightScores;
     [self setNeedsDisplay];

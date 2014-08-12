@@ -9,20 +9,16 @@
 #import "GameViewController.h"
 #import "BridgeRoundView.h"
 #import "ContractViewController.h"
+#import "ContractResult.h"
+#import "GameScorer.h"
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet BridgeRoundView *gameView;
+@property (strong, nonatomic) NSMutableArray *gameStates;
+@property (strong, nonatomic) NSMutableArray *contractResults;
 @end
 
 @implementation GameViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -30,22 +26,44 @@
     
     // Do any additional setup after loading the view.
     
-    // Testing
-    self.gameView.topLeftScores = @[[NSNumber numberWithInt:30],
-                                    [NSNumber numberWithInt:40]];
-    
-    self.gameView.topRightScores = @[[NSNumber numberWithInt:50],
-                                     [NSNumber numberWithInt:100]];
-    
-    self.gameView.bottomLeftScores = @[[NSNumber numberWithInt:100],
-                                       [NSNumber numberWithInt:30]];
-    
-    self.gameView.bottomRightScores = @[[NSNumber numberWithInt:60]];
+    self.contractResults = [[NSMutableArray alloc] init];
+    self.gameStates = [[NSMutableArray alloc] init];
+    [self.gameStates addObject:[[GameState alloc] init]];
 }
 
 - (void)addContract:(BridgeContract *)contract
 {
-//    [self.gameView addC];
+    self.currentContract = contract;
+}
+
+- (void)completeContractWithTricks:(NSInteger)tricksMade withHonors:(NSInteger)honors
+{
+    ContractResult *result = [[ContractResult alloc] initWithContract:self.currentContract];
+    result.tricksMade = tricksMade;
+    result.honors = honors;
+    [self addResult:result];
+}
+
+- (void)addResult:(ContractResult *)result
+{
+    [self.contractResults addObject:result];
+    ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:[self currentState]];
+    [self.gameStates addObject:outcome.gameState];
+    GameScore *score = outcome.gameScore;
+    if(result.contract.north) {
+        [self.gameView.topLeftScores addObject:[NSNumber numberWithInt:score.offenseAboveLine]];
+        [self.gameView.bottomLeftScores addObject:[NSNumber numberWithInt:score.offenseBelowLine]];
+        [self.gameView.topRightScores addObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+    } else {
+        [self.gameView.topRightScores addObject:[NSNumber numberWithInt:score.offenseAboveLine]];
+        [self.gameView.bottomRightScores addObject:[NSNumber numberWithInt:score.offenseBelowLine]];
+        [self.gameView.topLeftScores addObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+    }
+}
+
+- (GameState *)currentState
+{
+    return self.gameStates[-1];
 }
 
 #pragma mark - Navigation

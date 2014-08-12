@@ -10,8 +10,9 @@
 
 @implementation GameScorer
 
-+ (ContractOutcome *) calculateGameScore:(BridgeContract *)contract inGameState:(GameState *)currentGameState
++ (ContractOutcome *) calculateGameScore:(ContractResult *)result inGameState:(GameState *)currentGameState
 {
+    BridgeContract *contract = result.contract;
     GameScore *gameScore = [[GameScore alloc] init];
     GameState *gameState = [[GameState alloc] initFromGameState:currentGameState];
     
@@ -37,7 +38,7 @@
         pointsOn = currentGameState.eastPointsOn;
     }
     
-    if([contract madeContract]) {
+    if([result madeContract]) {
         if(contract.doubled) {
             if(contract.redoubled) {
                 firstTrickPoints *= 4;
@@ -51,7 +52,7 @@
         }
         gameScore.offenseBelowLine = firstTrickPoints;
         gameScore.offenseBelowLine += otherTrickPoints * (contract.bid - 1);
-        gameScore.offenseAboveLine += otherTrickPoints * contract.overtricks;
+        gameScore.offenseAboveLine += otherTrickPoints * result.overtricks;
         
         // if making a game
         if(pointsOn + gameScore.offenseBelowLine >= 100) {
@@ -79,43 +80,43 @@
             if(contract.doubled) {
                 if(contract.redoubled) {
                     gameScore.defenseAboveLine = 400;
-                    gameScore.defenseAboveLine += (600 * (contract.undertricks - 1));
+                    gameScore.defenseAboveLine += (600 * (result.undertricks - 1));
                 } else {
                     // double vulnerable
                     gameScore.defenseAboveLine = 200;
-                    gameScore.defenseAboveLine += (300 * (contract.undertricks - 1));
+                    gameScore.defenseAboveLine += (300 * (result.undertricks - 1));
                 }
             } else {
                 // vulnerable
-                gameScore.defenseAboveLine = contract.undertricks * 100;
+                gameScore.defenseAboveLine = result.undertricks * 100;
             }
         } else {
             if(contract.doubled) {
                 if(contract.redoubled) {
                     gameScore.defenseAboveLine = 200;
-                    if(contract.undertricks > 3) {
-                        gameScore.defenseAboveLine = 1000 + 600 * (contract.undertricks - 3);
+                    if(result.undertricks > 3) {
+                        gameScore.defenseAboveLine = 1000 + 600 * (result.undertricks - 3);
                     } else {
-                        gameScore.defenseAboveLine += (400 * (contract.undertricks - 1));
+                        gameScore.defenseAboveLine += (400 * (result.undertricks - 1));
                     }
-                    gameScore.defenseAboveLine += (300 * (contract.undertricks - 1));
+                    gameScore.defenseAboveLine += (300 * (result.undertricks - 1));
                 } else {
                     gameScore.defenseAboveLine = 100;
-                    if(contract.undertricks > 3) {
-                        gameScore.defenseAboveLine = 500 + 300 * (contract.undertricks - 3);
+                    if(result.undertricks > 3) {
+                        gameScore.defenseAboveLine = 500 + 300 * (result.undertricks - 3);
                     } else {
-                        gameScore.defenseAboveLine += (200 * (contract.undertricks - 1));
+                        gameScore.defenseAboveLine += (200 * (result.undertricks - 1));
                     }
                 }
             } else {
                 // default
-                gameScore.defenseAboveLine = contract.undertricks * 50;
+                gameScore.defenseAboveLine = result.undertricks * 50;
             }
         }
     }
     
     // bonus points - honors
-    gameScore.offenseAboveLine += contract.honors;
+    gameScore.offenseAboveLine += result.honors;
     
     return [[ContractOutcome alloc] initWithGameState:gameState withGameScore:gameScore];
 }

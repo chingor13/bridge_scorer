@@ -11,15 +11,12 @@
 
 @interface BridgeContract : NSObject
 
+// contract attributes
 @property NSInteger bid;
 @property CardSuit suit;
-@property NSInteger tricksMade;
-@property NSInteger honors;
 @property BOOL north;
 @property BOOL doubled;
 @property BOOL redoubled;
-- (BOOL) madeContract;
-- (NSInteger) overtricks;
-- (NSInteger) undertricks;
 
+// results
 @end

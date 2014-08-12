@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D0882DD199808F800A7F888 /* BridgeRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0882DC199808F800A7F888 /* BridgeRound.m */; };
 		8D0882E01998091600A7F888 /* BridgeContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0882DF1998091600A7F888 /* BridgeContract.m */; };
 		8D0882E419980F4F00A7F888 /* BridgeRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0882E319980F4F00A7F888 /* BridgeRoundView.m */; };
+		8D86227A199A8079007B2D3A /* ContractResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D862279199A8079007B2D3A /* ContractResult.m */; };
 		8D9643AA19993E72001DB5D9 /* GameScorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643A919993E72001DB5D9 /* GameScorer.m */; };
 		8D9643AD19994441001DB5D9 /* GameScorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643AC19994441001DB5D9 /* GameScorerTests.m */; };
 		8D9643AF19994606001DB5D9 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643AE19994606001DB5D9 /* GameState.m */; };
@@ -44,14 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D0882DB199808F800A7F888 /* BridgeRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeRound.h; sourceTree = "<group>"; };
-		8D0882DC199808F800A7F888 /* BridgeRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeRound.m; sourceTree = "<group>"; };
 		8D0882DE1998091600A7F888 /* BridgeContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeContract.h; sourceTree = "<group>"; };
 		8D0882DF1998091600A7F888 /* BridgeContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeContract.m; sourceTree = "<group>"; };
 		8D0882E119980B9A00A7F888 /* CardSuit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSuit.h; sourceTree = "<group>"; };
 		8D0882E219980F4F00A7F888 /* BridgeRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeRoundView.h; sourceTree = "<group>"; };
 		8D0882E319980F4F00A7F888 /* BridgeRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeRoundView.m; sourceTree = "<group>"; };
 		8D862277199A75A4007B2D3A /* ContractDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContractDelegate.h; sourceTree = "<group>"; };
+		8D862278199A8079007B2D3A /* ContractResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractResult.h; sourceTree = "<group>"; };
+		8D862279199A8079007B2D3A /* ContractResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractResult.m; sourceTree = "<group>"; };
 		8D9643A819993E72001DB5D9 /* GameScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScorer.h; sourceTree = "<group>"; };
 		8D9643A919993E72001DB5D9 /* GameScorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScorer.m; sourceTree = "<group>"; };
 		8D9643AB19993EB7001DB5D9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
@@ -110,6 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D86227B199A8AEC007B2D3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D0882DE1998091600A7F888 /* BridgeContract.h */,
+				8D0882DF1998091600A7F888 /* BridgeContract.m */,
+				8D9643AB19993EB7001DB5D9 /* GameState.h */,
+				8D9643AE19994606001DB5D9 /* GameState.m */,
+				8D9643B31999477A001DB5D9 /* GameScore.h */,
+				8D9643B41999477A001DB5D9 /* GameScore.m */,
+				8D9643A819993E72001DB5D9 /* GameScorer.h */,
+				8D9643A919993E72001DB5D9 /* GameScorer.m */,
+				8D9643B0199946B5001DB5D9 /* ContractOutcome.h */,
+				8D9643B1199946B5001DB5D9 /* ContractOutcome.m */,
+				8D0882E119980B9A00A7F888 /* CardSuit.h */,
+				8D862278199A8079007B2D3A /* ContractResult.h */,
+				8D862279199A8079007B2D3A /* ContractResult.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8DBB4B12199094590065087D = {
 			isa = PBXGroup;
 			children = (
@@ -143,22 +163,10 @@
 		8DBB4B24199094590065087D /* BridgeScorer */ = {
 			isa = PBXGroup;
 			children = (
+				8D86227B199A8AEC007B2D3A /* Models */,
 				8DBB4B30199094590065087D /* Main.storyboard */,
 				8D9643B6199982F2001DB5D9 /* ContractViewController.h */,
 				8D9643B7199982F2001DB5D9 /* ContractViewController.m */,
-				8D0882DE1998091600A7F888 /* BridgeContract.h */,
-				8D0882DF1998091600A7F888 /* BridgeContract.m */,
-				8D0882DB199808F800A7F888 /* BridgeRound.h */,
-				8D0882DC199808F800A7F888 /* BridgeRound.m */,
-				8D9643AB19993EB7001DB5D9 /* GameState.h */,
-				8D9643AE19994606001DB5D9 /* GameState.m */,
-				8D9643B31999477A001DB5D9 /* GameScore.h */,
-				8D9643B41999477A001DB5D9 /* GameScore.m */,
-				8D9643A819993E72001DB5D9 /* GameScorer.h */,
-				8D9643A919993E72001DB5D9 /* GameScorer.m */,
-				8D9643B0199946B5001DB5D9 /* ContractOutcome.h */,
-				8D9643B1199946B5001DB5D9 /* ContractOutcome.m */,
-				8D0882E119980B9A00A7F888 /* CardSuit.h */,
 				8DBB4B56199095390065087D /* GameTypeSelectionViewController.h */,
 				8DBB4B57199095390065087D /* GameTypeSelectionViewController.m */,
 				8DBB4B53199094B60065087D /* GameViewController.h */,
@@ -302,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9643B2199946B5001DB5D9 /* ContractOutcome.m in Sources */,
-				8D0882DD199808F800A7F888 /* BridgeRound.m in Sources */,
+				8D86227A199A8079007B2D3A /* ContractResult.m in Sources */,
 				8D9643AF19994606001DB5D9 /* GameState.m in Sources */,
 				8DBB4B55199094B60065087D /* GameViewController.m in Sources */,
 				8D9643B8199982F2001DB5D9 /* ContractViewController.m in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jeffrey Ching. All rights reserved.
 //
 
-#import "BridgeContract.h";
+#import "BridgeContract.h"
 
 @protocol ContractDelegate
 - (void)addContract:(BridgeContract *)contract;
