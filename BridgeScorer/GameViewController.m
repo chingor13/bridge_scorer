@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "BridgeRoundView.h"
 #import "ContractViewController.h"
+#import "ResultsViewController.h"
 #import "ContractResult.h"
 #import "GameScorer.h"
 
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet BridgeRoundView *gameView;
 @property (strong, nonatomic) NSMutableArray *gameStates;
 @property (strong, nonatomic) NSMutableArray *contractResults;
+@property (weak, nonatomic) IBOutlet UILabel *contractLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIButton *resultsButton;
 @end
 
 @implementation GameViewController
@@ -31,17 +35,41 @@
     [self.gameStates addObject:[[GameState alloc] init]];
 }
 
-- (void)addContract:(BridgeContract *)contract
+- (void)setContract:(BridgeContract *)contract
 {
     self.currentContract = contract;
+    if(self.currentContract) {
+        // change Add button to Edit
+        self.addButton.titleLabel.text = @"Edit";
+        
+        // set current contract label to the contract string
+        self.contractLabel.text = [contract shortDescription];
+        if(contract.north) {
+            self.contractLabel.textAlignment = NSTextAlignmentLeft;
+        } else {
+            self.contractLabel.textAlignment = NSTextAlignmentRight;
+        }
+        
+        // enable Results button
+        self.resultsButton.enabled = YES;
+    } else {
+        // change Edit button to Add
+        self.addButton.titleLabel.text = @"Add";
+        
+        // clear current contract label
+        self.contractLabel.text = @"";
+        
+        // disable Results button
+        self.resultsButton.enabled = NO;
+    }
 }
 
-- (void)completeContractWithTricks:(NSInteger)tricksMade withHonors:(NSInteger)honors
+- (void)setResults:(ContractResult *)result
 {
-    ContractResult *result = [[ContractResult alloc] initWithContract:self.currentContract];
-    result.tricksMade = tricksMade;
-    result.honors = honors;
     [self addResult:result];
+    
+    // unset current contract
+    [self setContract: nil];
 }
 
 - (void)addResult:(ContractResult *)result
@@ -76,6 +104,11 @@
      if([segue.identifier isEqualToString:@"Create Contract Segue"]) {
          ContractViewController *cvc = segue.destinationViewController;
          cvc.contractDelegate = self;
+     } else if([segue.identifier isEqualToString:@"Results Segue"]){
+         NSLog(@"Results Segue");
+         ResultsViewController *rvc = segue.destinationViewController;
+         rvc.contract = [self currentContract];
+         rvc.contractDelegate = self;
      }
 }
 

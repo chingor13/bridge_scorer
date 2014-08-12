@@ -7,7 +7,9 @@
 //
 
 #import "BridgeContract.h"
+#import "ContractResult.h"
 
 @protocol ContractDelegate
-- (void)addContract:(BridgeContract *)contract;
+- (void)setContract:(BridgeContract *)contract;
+- (void)setResults:(ContractResult *)result;
 @end

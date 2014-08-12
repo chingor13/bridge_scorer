@@ -18,5 +18,5 @@
 @property BOOL doubled;
 @property BOOL redoubled;
 
-// results
+- (NSString *)shortDescription;
 @end

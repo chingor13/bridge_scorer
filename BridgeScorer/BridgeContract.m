@@ -43,11 +43,29 @@
     }
 }
 
-- (NSString *) description
+- (NSString *)doubledString
 {
-    return [NSString stringWithFormat:@"BridgeContract:%ld%@ by %@",
+    if(self.redoubled) {
+        return @"x4";
+    } else if(self.doubled) {
+        return @"x2";
+    } else {
+        return @"";
+    }
+}
+
+- (NSString *)shortDescription
+{
+    return [NSString stringWithFormat:@"%ld%@%@",
             (long)self.bid,
             [self suitString],
+            [self doubledString]];
+}
+
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"BridgeContract:%@ by %@",
+            [self shortDescription],
             [self ownerString]];
 }
 @end

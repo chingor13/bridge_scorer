@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *suitPicker;
 @property (weak, nonatomic) IBOutlet UISlider *resultsSlider;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *doubleCountrol;
+@property (weak, nonatomic) IBOutlet UISwitch *teamSwitch;
 @property (strong, nonatomic) NSArray *suitArray;
 @property (strong, nonatomic) NSArray *bidArray;
 @property (nonatomic) BOOL doubled;
@@ -54,12 +55,7 @@
 
 - (IBAction)saveContract:(id)sender
 {
-    [self.contractDelegate addContract:[self buildContract]];
-    [self.navigationController popViewControllerAnimated:true];
-}
-
-- (IBAction)cancelContract:(id)sender
-{
+    [self.contractDelegate setContract:[self buildContract]];
     [self.navigationController popViewControllerAnimated:true];
 }
 
@@ -70,6 +66,7 @@
     contract.suit = [self selectedSuit];
     contract.doubled = self.doubled;
     contract.redoubled = self.redoubled;
+    contract.north = !self.teamSwitch.on;
     return contract;
 }
 
