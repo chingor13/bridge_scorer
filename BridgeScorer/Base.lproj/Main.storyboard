@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1282" y="153"/>
         </scene>
-        <!--View Controller - Add Game-->
+        <!--Contract View Controller - Add Game-->
         <scene sceneID="bWl-Qv-YSW">
             <objects>
-                <viewController id="Gxa-00-Wa5" sceneMemberID="viewController">
+                <viewController id="Gxa-00-Wa5" customClass="ContractViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GSv-sw-53X"/>
                         <viewControllerLayoutGuide type="bottom" id="012-V3-jwo"/>
@@ -125,6 +125,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Game" id="1ve-pO-M4c"/>
+                    <connections>
+                        <outlet property="resultsSlider" destination="KU1-bF-ooA" id="65Q-uL-LBm"/>
+                        <outlet property="stepper" destination="96M-Q5-ADz" id="BnH-qm-xqO"/>
+                        <outlet property="stepperLabel" destination="BNY-1c-gd6" id="x3Z-o8-JPR"/>
+                        <outlet property="suitPicker" destination="20h-1F-9dN" id="LCM-er-rab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Es-zk-Zkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

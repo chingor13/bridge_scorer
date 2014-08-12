@@ -15,6 +15,7 @@
 		8D9643AF19994606001DB5D9 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643AE19994606001DB5D9 /* GameState.m */; };
 		8D9643B2199946B5001DB5D9 /* ContractOutcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643B1199946B5001DB5D9 /* ContractOutcome.m */; };
 		8D9643B51999477A001DB5D9 /* GameScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643B41999477A001DB5D9 /* GameScore.m */; };
+		8D9643B8199982F2001DB5D9 /* ContractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9643B7199982F2001DB5D9 /* ContractViewController.m */; };
 		8DBB4B1F199094590065087D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B1E199094590065087D /* Foundation.framework */; };
 		8DBB4B21199094590065087D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B20199094590065087D /* CoreGraphics.framework */; };
 		8DBB4B23199094590065087D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBB4B22199094590065087D /* UIKit.framework */; };
@@ -59,6 +60,8 @@
 		8D9643B1199946B5001DB5D9 /* ContractOutcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractOutcome.m; sourceTree = "<group>"; };
 		8D9643B31999477A001DB5D9 /* GameScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScore.h; sourceTree = "<group>"; };
 		8D9643B41999477A001DB5D9 /* GameScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScore.m; sourceTree = "<group>"; };
+		8D9643B6199982F2001DB5D9 /* ContractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractViewController.h; sourceTree = "<group>"; };
+		8D9643B7199982F2001DB5D9 /* ContractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractViewController.m; sourceTree = "<group>"; };
 		8DBB4B1B199094590065087D /* BridgeScorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeScorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBB4B1E199094590065087D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DBB4B20199094590065087D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				8DBB4B30199094590065087D /* Main.storyboard */,
+				8D9643B6199982F2001DB5D9 /* ContractViewController.h */,
+				8D9643B7199982F2001DB5D9 /* ContractViewController.m */,
 				8D0882DE1998091600A7F888 /* BridgeContract.h */,
 				8D0882DF1998091600A7F888 /* BridgeContract.m */,
 				8D0882DB199808F800A7F888 /* BridgeRound.h */,
@@ -298,6 +303,7 @@
 				8D0882DD199808F800A7F888 /* BridgeRound.m in Sources */,
 				8D9643AF19994606001DB5D9 /* GameState.m in Sources */,
 				8DBB4B55199094B60065087D /* GameViewController.m in Sources */,
+				8D9643B8199982F2001DB5D9 /* ContractViewController.m in Sources */,
 				8D9643B51999477A001DB5D9 /* GameScore.m in Sources */,
 				8D0882E01998091600A7F888 /* BridgeContract.m in Sources */,
 				8DBB4B2F199094590065087D /* AppDelegate.m in Sources */,
