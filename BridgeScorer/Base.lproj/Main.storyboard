@@ -62,9 +62,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vf9-Cs-yMu">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="S4Y-jn-ZQI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="S4Y-jn-ZQI">
+                            <connections>
+                                <action selector="saveResults:" destination="cSC-Vs-aWj" id="vi6-hH-BeW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="honorsSegment" destination="Ihu-n1-MZQ" id="3Kx-UM-4DX"/>
                         <outlet property="picker" destination="EM6-AB-GCg" id="Zge-5n-4Xs"/>
                     </connections>
                 </viewController>

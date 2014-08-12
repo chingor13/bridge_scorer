@@ -15,29 +15,45 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self setup];
     }
     return self;
 }
 
-- (void)setTopLeftScores:(NSMutableArray *)topLeftScores
+- (void) awakeFromNib
+{
+    [super awakeFromNib];
+    [self setup];
+    
+}
+
+- (void)setup
+{
+    self.topLeftScores = @[];
+    self.topRightScores = @[];
+    self.bottomLeftScores = @[];
+    self.bottomRightScores = @[];
+}
+
+- (void)setTopLeftScores:(NSArray *)topLeftScores
 {
     _topLeftScores = topLeftScores;
     [self setNeedsDisplay];
 }
 
-- (void)setTopRightScores:(NSMutableArray *)topRightScores
+- (void)setTopRightScores:(NSArray *)topRightScores
 {
     _topRightScores = topRightScores;
     [self setNeedsDisplay];
 }
 
-- (void)setBottomLeftScores:(NSMutableArray *)bottomLeftScores
+- (void)setBottomLeftScores:(NSArray *)bottomLeftScores
 {
     _bottomLeftScores = bottomLeftScores;
     [self setNeedsDisplay];
 }
 
-- (void)setBottomRightScores:(NSMutableArray *)bottomRightScores
+- (void)setBottomRightScores:(NSArray *)bottomRightScores
 {
     _bottomRightScores = bottomRightScores;
     [self setNeedsDisplay];

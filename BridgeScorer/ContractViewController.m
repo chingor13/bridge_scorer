@@ -72,12 +72,13 @@
 
 - (NSInteger)bid
 {
-    return 4;
+    return [self.suitPicker selectedRowInComponent:0] + 1;
 }
 
 - (CardSuit)selectedSuit
 {
-    return CardSuitClubs;
+    CardSuit suits[] = {CardSuitClubs, CardSuitDiamonds, CardSuitHearts, CardSuitSpades, CardSuitNoTrump};
+    return suits[[self.suitPicker selectedRowInComponent:1]];
 }
 
 - (void)viewDidLoad

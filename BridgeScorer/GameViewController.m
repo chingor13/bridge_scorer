@@ -15,11 +15,11 @@
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet BridgeRoundView *gameView;
-@property (strong, nonatomic) NSMutableArray *gameStates;
-@property (strong, nonatomic) NSMutableArray *contractResults;
 @property (weak, nonatomic) IBOutlet UILabel *contractLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *resultsButton;
+@property (strong, nonatomic) NSMutableArray *gameStates;
+@property (strong, nonatomic) NSMutableArray *contractResults;
 @end
 
 @implementation GameViewController
@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    
     self.contractResults = [[NSMutableArray alloc] init];
     self.gameStates = [[NSMutableArray alloc] init];
     [self.gameStates addObject:[[GameState alloc] init]];
@@ -67,7 +66,6 @@
 - (void)setResults:(ContractResult *)result
 {
     [self addResult:result];
-    
     // unset current contract
     [self setContract: nil];
 }
@@ -78,20 +76,21 @@
     ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:[self currentState]];
     [self.gameStates addObject:outcome.gameState];
     GameScore *score = outcome.gameScore;
+    
     if(result.contract.north) {
-        [self.gameView.topLeftScores addObject:[NSNumber numberWithInt:score.offenseAboveLine]];
-        [self.gameView.bottomLeftScores addObject:[NSNumber numberWithInt:score.offenseBelowLine]];
-        [self.gameView.topRightScores addObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
+        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
     } else {
-        [self.gameView.topRightScores addObject:[NSNumber numberWithInt:score.offenseAboveLine]];
-        [self.gameView.bottomRightScores addObject:[NSNumber numberWithInt:score.offenseBelowLine]];
-        [self.gameView.topLeftScores addObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
+        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
     }
 }
 
 - (GameState *)currentState
 {
-    return self.gameStates[-1];
+    return self.gameStates[[self.gameStates count] - 1];
 }
 
 #pragma mark - Navigation
@@ -105,7 +104,6 @@
          ContractViewController *cvc = segue.destinationViewController;
          cvc.contractDelegate = self;
      } else if([segue.identifier isEqualToString:@"Results Segue"]){
-         NSLog(@"Results Segue");
          ResultsViewController *rvc = segue.destinationViewController;
          rvc.contract = [self currentContract];
          rvc.contractDelegate = self;
