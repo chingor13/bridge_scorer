@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContractDelegate.h"
 
 @interface ContractViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (strong, nonatomic) id<ContractDelegate> contractDelegate;
 
 @end

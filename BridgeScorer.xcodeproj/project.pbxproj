@@ -51,6 +51,7 @@
 		8D0882E119980B9A00A7F888 /* CardSuit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSuit.h; sourceTree = "<group>"; };
 		8D0882E219980F4F00A7F888 /* BridgeRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeRoundView.h; sourceTree = "<group>"; };
 		8D0882E319980F4F00A7F888 /* BridgeRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeRoundView.m; sourceTree = "<group>"; };
+		8D862277199A75A4007B2D3A /* ContractDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContractDelegate.h; sourceTree = "<group>"; };
 		8D9643A819993E72001DB5D9 /* GameScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScorer.h; sourceTree = "<group>"; };
 		8D9643A919993E72001DB5D9 /* GameScorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScorer.m; sourceTree = "<group>"; };
 		8D9643AB19993EB7001DB5D9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 				8DBB4B57199095390065087D /* GameTypeSelectionViewController.m */,
 				8DBB4B53199094B60065087D /* GameViewController.h */,
 				8DBB4B54199094B60065087D /* GameViewController.m */,
+				8D862277199A75A4007B2D3A /* ContractDelegate.h */,
 				8D0882E219980F4F00A7F888 /* BridgeRoundView.h */,
 				8D0882E319980F4F00A7F888 /* BridgeRoundView.m */,
 				8DBB4B36199094590065087D /* Images.xcassets */,

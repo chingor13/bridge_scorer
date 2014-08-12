@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "BridgeRoundView.h"
+#import "ContractViewController.h"
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet BridgeRoundView *gameView;
@@ -42,7 +43,11 @@
     self.gameView.bottomRightScores = @[[NSNumber numberWithInt:60]];
 }
 
-/*
+- (void)addContract:(BridgeContract *)contract
+{
+//    [self.gameView addC];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -50,7 +55,10 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+     if([segue.identifier isEqualToString:@"Create Contract Segue"]) {
+         ContractViewController *cvc = segue.destinationViewController;
+         cvc.contractDelegate = self;
+     }
 }
-*/
 
 @end

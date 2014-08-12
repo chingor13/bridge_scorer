@@ -7,13 +7,18 @@
 //
 
 #import "ContractViewController.h"
+#import "GameViewController.h"
+#import "BridgeContract.h"
 
 @interface ContractViewController ()
-@property (weak, nonatomic) IBOutlet UIStepper *stepper;
-@property (weak, nonatomic) IBOutlet UILabel *stepperLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *suitPicker;
 @property (weak, nonatomic) IBOutlet UISlider *resultsSlider;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *doubleCountrol;
 @property (strong, nonatomic) NSArray *suitArray;
+@property (strong, nonatomic) NSArray *bidArray;
+@property (nonatomic) BOOL doubled;
+@property (nonatomic) BOOL redoubled;
+@property (nonatomic) NSInteger honors;
 @end
 
 @implementation ContractViewController
@@ -27,27 +32,88 @@
     return self;
 }
 
+- (IBAction)contractDoublingChanged:(id)sender
+{
+    if([sender selectedSegmentIndex] == 2) {
+        self.doubled = YES;
+        self.redoubled = YES;
+    } else if([sender selectedSegmentIndex] == 1) {
+        self.doubled = YES;
+        self.redoubled = NO;
+    } else {
+        self.doubled = NO;
+        self.redoubled = NO;
+    }
+}
+
+- (IBAction)honorsChanged:(id)sender
+{
+    NSInteger honorPoints[] = {0, 100, 150};
+    self.honors = honorPoints[[sender selectedSegmentIndex]];
+}
+
+- (IBAction)saveContract:(id)sender
+{
+    [self.contractDelegate addContract:[self buildContract]];
+    [self.navigationController popViewControllerAnimated:true];
+}
+
+- (IBAction)cancelContract:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:true];
+}
+
+- (BridgeContract *)buildContract
+{
+    BridgeContract *contract = [[BridgeContract alloc] init];
+    contract.bid = [self bid];
+    contract.suit = [self selectedSuit];
+    contract.doubled = self.doubled;
+    contract.redoubled = self.redoubled;
+    return contract;
+}
+
+- (NSInteger)bid
+{
+    return 4;
+}
+
+- (CardSuit)selectedSuit
+{
+    return CardSuitClubs;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.suitArray = @[@"♣︎",@"♦︎",@"♥︎",@"♠︎",@"NT"];
+    self.bidArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
     // Do any additional setup after loading the view.
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [self.suitArray count];
+    if(component == 0) {
+        return [self.bidArray count];
+    } else {
+        return [self.suitArray count];
+    }
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
-    return [self.suitArray objectAtIndex:row];
+    if(component == 0) {
+        return [self.bidArray objectAtIndex:row];
+    } else {
+        return [self.suitArray objectAtIndex:row];
+    }
 }
+
 /*
 #pragma mark - Navigation
 
@@ -58,5 +124,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+ 
 @end
