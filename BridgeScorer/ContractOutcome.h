@@ -12,8 +12,9 @@
 
 @interface ContractOutcome : NSObject
 
-@property GameState *gameState;
-@property GameScore *gameScore;
+@property (strong, nonatomic) GameState *gameState;
+@property (strong, nonatomic) GameScore *gameScore;
+@property BOOL gameMade;
 
 - (id) initWithGameState:(GameState *)gameState withGameScore:(GameScore *)gameScore;
 

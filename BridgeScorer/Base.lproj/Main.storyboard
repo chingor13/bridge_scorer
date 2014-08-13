@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="F6w-6v-92H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FQZ-K1-9bM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -38,19 +38,19 @@
                         <viewControllerLayoutGuide type="bottom" id="Po8-of-wO8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m2L-R9-LP9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EM6-AB-GCg">
-                                <rect key="frame" x="0.0" y="159" width="320" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EM6-AB-GCg">
+                                <rect key="frame" x="0.0" y="203" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cSC-Vs-aWj" id="Wok-ES-vxD"/>
                                     <outlet property="delegate" destination="cSC-Vs-aWj" id="h17-Gb-Cpm"/>
                                 </connections>
                             </pickerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-n1-MZQ">
-                                <rect key="frame" x="20" y="432" width="280" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-n1-MZQ">
+                                <rect key="frame" x="20" y="482" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="0"/>
@@ -58,16 +58,30 @@
                                     <segment title="150"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-V2-H07">
+                                <rect key="frame" x="20" y="518" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveResults:" destination="cSC-Vs-aWj" eventType="touchUpInside" id="qah-UU-NEQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ihu-n1-MZQ" firstAttribute="leading" secondItem="m2L-R9-LP9" secondAttribute="leading" constant="20" symbolic="YES" id="Dnn-J4-5FC"/>
+                            <constraint firstItem="EM6-AB-GCg" firstAttribute="centerY" secondItem="m2L-R9-LP9" secondAttribute="centerY" id="H8B-1n-D5d"/>
+                            <constraint firstItem="Ihu-n1-MZQ" firstAttribute="leading" secondItem="g3D-V2-H07" secondAttribute="leading" id="L3I-K4-DIK"/>
+                            <constraint firstAttribute="bottom" secondItem="g3D-V2-H07" secondAttribute="bottom" constant="20" symbolic="YES" id="NJV-sB-k2d"/>
+                            <constraint firstItem="EM6-AB-GCg" firstAttribute="leading" secondItem="m2L-R9-LP9" secondAttribute="leading" id="T5U-jC-ft5"/>
+                            <constraint firstItem="g3D-V2-H07" firstAttribute="top" secondItem="Ihu-n1-MZQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ww2-Dr-Vnf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ihu-n1-MZQ" secondAttribute="trailing" constant="20" symbolic="YES" id="fOu-Nj-iTQ"/>
+                            <constraint firstItem="Ihu-n1-MZQ" firstAttribute="centerX" secondItem="EM6-AB-GCg" secondAttribute="centerX" id="wlI-Sn-spl"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vf9-Cs-yMu">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="S4Y-jn-ZQI">
-                            <connections>
-                                <action selector="saveResults:" destination="cSC-Vs-aWj" id="vi6-hH-BeW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="vf9-Cs-yMu"/>
                     <connections>
                         <outlet property="honorsSegment" destination="Ihu-n1-MZQ" id="3Kx-UM-4DX"/>
                         <outlet property="picker" destination="EM6-AB-GCg" id="Zge-5n-4Xs"/>
@@ -86,16 +100,19 @@
                         <viewControllerLayoutGuide type="bottom" id="eyU-7R-I0Q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9ao-DH-w1s">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-mS-CwN" customClass="BridgeRoundView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-mS-CwN" customClass="BridgeRoundView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-iQ-yf1">
-                                        <rect key="frame" x="20" y="366" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-iQ-yf1">
+                                        <rect key="frame" x="20" y="454" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="dbz-3G-OpT"/>
+                                        </constraints>
                                         <state key="normal" title="Add">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -103,8 +120,8 @@
                                             <segue destination="Gxa-00-Wa5" kind="push" identifier="Create Contract Segue" id="VAk-kS-aCB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-X1-3zN">
-                                        <rect key="frame" x="249" y="366" width="51" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-X1-3zN">
+                                        <rect key="frame" x="249" y="454" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Results">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,8 +130,8 @@
                                             <segue destination="cSC-Vs-aWj" kind="push" identifier="Results Segue" id="kV2-7h-pb3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-XC-SAz">
-                                        <rect key="frame" x="100" y="366" width="120" height="30"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-XC-SAz">
+                                        <rect key="frame" x="100" y="454" width="120" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -122,9 +139,25 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="4Ls-f4-2CT"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="top" secondItem="CEC-XC-SAz" secondAttribute="top" id="8Lk-DC-ke0"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="AWa-yF-Yhp"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="baseline" secondItem="Ahn-X1-3zN" secondAttribute="baseline" id="AaN-mj-HIg"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="bottom" secondItem="CEC-XC-SAz" secondAttribute="bottom" id="CIV-fx-eiC"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="JF5-SK-Ycl"/>
+                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="qcK-wZ-0Th"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" constant="20" symbolic="YES" id="zwv-LR-i3k"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ok8-mS-CwN" secondAttribute="trailing" id="7IS-wN-ZPe"/>
+                            <constraint firstAttribute="bottom" secondItem="ok8-mS-CwN" secondAttribute="bottom" id="e9j-fd-ksH"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="leading" secondItem="9ao-DH-w1s" secondAttribute="leading" id="hH6-xd-wHC"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="TGw-Qd-M8O" secondAttribute="bottom" id="tF8-wc-jkF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Single Game" id="rSB-S2-izh"/>
                     <connections>
@@ -147,19 +180,19 @@
                         <viewControllerLayoutGuide type="bottom" id="012-V3-jwo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TgV-FC-4nN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20h-1F-9dN">
-                                <rect key="frame" x="0.0" y="159" width="320" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20h-1F-9dN">
+                                <rect key="frame" x="0.0" y="203" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Gxa-00-Wa5" id="99H-Ez-Tft"/>
                                     <outlet property="delegate" destination="Gxa-00-Wa5" id="jlI-wJ-Ciz"/>
                                 </connections>
                             </pickerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AsT-PC-ye8">
-                                <rect key="frame" x="20" y="432" width="280" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AsT-PC-ye8">
+                                <rect key="frame" x="20" y="482" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Normal"/>
@@ -170,32 +203,52 @@
                                     <action selector="contractDoublingChanged:" destination="Gxa-00-Wa5" eventType="valueChanged" id="YUY-ji-MPR"/>
                                 </connections>
                             </segmentedControl>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-hw-Xj1">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-hw-Xj1">
                                 <rect key="frame" x="136" y="91" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="East/West" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-NA-ss9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="East/West" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-NA-ss9">
                                 <rect key="frame" x="222" y="96" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="North/South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wul-Ra-8YN">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North/South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wul-Ra-8YN">
                                 <rect key="frame" x="20" y="96" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-q8-ODL">
+                                <rect key="frame" x="20" y="518" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveContract:" destination="Gxa-00-Wa5" eventType="touchUpInside" id="swJ-Yu-lBg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wul-Ra-8YN" firstAttribute="leading" secondItem="AsT-PC-ye8" secondAttribute="leading" id="0vw-5g-ZMq"/>
+                            <constraint firstItem="AsT-PC-ye8" firstAttribute="leading" secondItem="Op2-q8-ODL" secondAttribute="leading" id="7SH-KQ-n9G"/>
+                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="centerY" secondItem="3Jc-NA-ss9" secondAttribute="centerY" id="9ct-UU-XEN"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerX" secondItem="Vna-hw-Xj1" secondAttribute="centerX" id="BG4-NS-GeP"/>
+                            <constraint firstItem="3Jc-NA-ss9" firstAttribute="trailing" secondItem="AsT-PC-ye8" secondAttribute="trailing" id="CR5-Zf-gKg"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerY" secondItem="TgV-FC-4nN" secondAttribute="centerY" id="K3E-TC-7E2"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerX" secondItem="AsT-PC-ye8" secondAttribute="centerX" id="LX8-dF-ym7"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" id="Vgh-oR-rRY"/>
+                            <constraint firstItem="wul-Ra-8YN" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" constant="20" symbolic="YES" id="Xov-s7-Zsk"/>
+                            <constraint firstItem="wul-Ra-8YN" firstAttribute="baseline" secondItem="3Jc-NA-ss9" secondAttribute="baseline" id="aN6-WJ-NXX"/>
+                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="top" secondItem="GSv-sw-53X" secondAttribute="bottom" constant="27" id="cDt-li-umz"/>
+                            <constraint firstAttribute="bottom" secondItem="Op2-q8-ODL" secondAttribute="bottom" constant="20" symbolic="YES" id="nMg-qm-iX7"/>
+                            <constraint firstItem="Op2-q8-ODL" firstAttribute="top" secondItem="AsT-PC-ye8" secondAttribute="bottom" constant="8" symbolic="YES" id="vSK-wH-hes"/>
+                            <constraint firstAttribute="trailing" secondItem="3Jc-NA-ss9" secondAttribute="trailing" constant="20" symbolic="YES" id="xJk-i2-kYq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Game" id="1ve-pO-M4c">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="L4L-SR-Uzs">
-                            <connections>
-                                <action selector="saveContract:" destination="Gxa-00-Wa5" id="1Pd-tr-uwD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Game" id="1ve-pO-M4c"/>
                     <connections>
                         <outlet property="doubleCountrol" destination="AsT-PC-ye8" id="r28-7L-Uf9"/>
                         <outlet property="suitPicker" destination="20h-1F-9dN" id="LCM-er-rab"/>
@@ -215,7 +268,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-SJ-nLa">
@@ -269,7 +322,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="VAk-kS-aCB"/>

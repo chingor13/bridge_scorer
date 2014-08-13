@@ -80,6 +80,7 @@
     NSInteger middleY = self.bounds.size.height / 2;
  
     // Set the starting point of the shape.
+    aPath.lineWidth = 4.0;
     [aPath moveToPoint:CGPointMake(0.0, middleY)];
  
     // Draw the lines.
@@ -90,7 +91,6 @@
     
     [aPath moveToPoint:CGPointMake(0.0, 30.0)];
     [aPath addLineToPoint:CGPointMake(self.bounds.size.width, 30.0)];
-    
     [aPath stroke];
     
     NSInteger y = middleY - 30;
@@ -115,28 +115,42 @@
             y -= 30;
         }
     }
-    y = middleY + 5;
-    for (NSNumber *number in self.bottomLeftScores) {
-        if([number intValue] > 0) {
-            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, middleX, 20)];
-            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-            scoreLabel.textAlignment = NSTextAlignmentCenter;
-            [scoreLabel setTextColor:[UIColor blackColor]];
-            [self addSubview:scoreLabel];
-            y += 30;
+    
+    aPath = [UIBezierPath bezierPath];
+    aPath.lineWidth = 1.0;
+    NSInteger leftY = middleY + 10;
+    NSInteger rightY = middleY + 10;
+    for (NSInteger i = 0; i < [self.bottomLeftScores count]; i++){
+        NSNumber *left = [self.bottomLeftScores objectAtIndex:i];
+        NSNumber *right = [self.bottomRightScores objectAtIndex:i];
+        if([left intValue] < 0) {
+            // we've hit a game line
+            NSInteger maxY = (leftY > rightY) ? leftY : rightY;
+            [aPath moveToPoint:CGPointMake(0, maxY)];
+            [aPath addLineToPoint:CGPointMake(self.bounds.size.width,maxY)];
+            leftY = maxY + 10;
+            rightY = maxY + 10;
+        } else {
+            if([left intValue] > 0) {
+                UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, leftY, middleX, 20)];
+                scoreLabel.text = [NSString stringWithFormat:@"%@", left];
+                scoreLabel.textAlignment = NSTextAlignmentCenter;
+                [scoreLabel setTextColor:[UIColor blackColor]];
+                [self addSubview:scoreLabel];
+                leftY += 30;
+            }
+            if([right intValue] > 0) {
+                UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, rightY, middleX, 20)];
+                scoreLabel.text = [NSString stringWithFormat:@"%@", right];
+                scoreLabel.textAlignment = NSTextAlignmentCenter;
+                [scoreLabel setTextColor:[UIColor blackColor]];
+                [self addSubview:scoreLabel];
+                rightY += 30;
+            }
         }
     }
-    y = middleY + 5;
-    for (NSNumber *number in self.bottomRightScores) {
-        if([number intValue] > 0) {
-            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, y, middleX, 20)];
-            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-            scoreLabel.textAlignment = NSTextAlignmentCenter;
-            [scoreLabel setTextColor:[UIColor blackColor]];
-            [self addSubview:scoreLabel];
-            y += 30;
-        }
-    }
+    
+    [aPath stroke];
 }
 
 

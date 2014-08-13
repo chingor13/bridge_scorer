@@ -15,6 +15,7 @@
     self = [super init];
     self.gameState = gameState;
     self.gameScore = gameScore;
+    self.gameMade = NO;
     return self;
 }
 

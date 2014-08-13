@@ -86,10 +86,18 @@
         self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
         self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
         self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:0]];
+
     } else {
         self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
         self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
         self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:0]];
+    }
+    
+    if(outcome.gameMade) {
+        self.gameView.bottomLeftScores =[self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:-1]];
+        self.gameView.bottomRightScores =[self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:-1]];
     }
 }
 

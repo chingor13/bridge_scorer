@@ -25,6 +25,7 @@
         firstTrickPoints = 40;
         otherTrickPoints = 30;
     }
+    BOOL gameMade = NO;
     BOOL bidderIsVulnerable = NO;
     BOOL defenseIsVulnerable = NO;
     NSInteger pointsOn = 0;
@@ -74,6 +75,7 @@
             }
             gameState.northPointsOn = 0;
             gameState.eastPointsOn = 0;
+            gameMade = YES;
         }
     } else {
         if(bidderIsVulnerable) {
@@ -117,8 +119,9 @@
     
     // bonus points - honors
     gameScore.offenseAboveLine += result.honors;
-    
-    return [[ContractOutcome alloc] initWithGameState:gameState withGameScore:gameScore];
+    ContractOutcome *ret = [[ContractOutcome alloc] initWithGameState:gameState withGameScore:gameScore];
+    ret.gameMade = gameMade;
+    return ret;
 }
 
 @end
