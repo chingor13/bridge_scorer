@@ -32,7 +32,7 @@
 		8DBB4B4A199094590065087D /* BridgeScorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B49199094590065087D /* BridgeScorerTests.m */; };
 		8DBB4B55199094B60065087D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B54199094B60065087D /* GameViewController.m */; };
 		8DBB4B58199095390065087D /* GameTypeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB4B57199095390065087D /* GameTypeSelectionViewController.m */; };
-		8DE0A7AE199B20C9009D28BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A7AD199B20C9009D28BB /* README.md */; };
+		8DC9AA10199B219400288355 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DC9AA0F199B219400288355 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,7 @@
 		8DBB4B54199094B60065087D /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		8DBB4B56199095390065087D /* GameTypeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeSelectionViewController.h; sourceTree = "<group>"; };
 		8DBB4B57199095390065087D /* GameTypeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeSelectionViewController.m; sourceTree = "<group>"; };
-		8DE0A7AD199B20C9009D28BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		8DC9AA0F199B219400288355 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,6 @@
 				8D0882E319980F4F00A7F888 /* BridgeRoundView.m */,
 				8DBB4B36199094590065087D /* Images.xcassets */,
 				8DBB4B25199094590065087D /* Supporting Files */,
-				8DE0A7AD199B20C9009D28BB /* README.md */,
 			);
 			path = BridgeScorer;
 			sourceTree = "<group>";
@@ -191,6 +190,7 @@
 		8DBB4B25199094590065087D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8DC9AA0F199B219400288355 /* README.md */,
 				8DBB4B2D199094590065087D /* AppDelegate.h */,
 				8DBB4B2E199094590065087D /* AppDelegate.m */,
 				8DBB4B26199094590065087D /* BridgeScorer-Info.plist */,
@@ -298,7 +298,7 @@
 			files = (
 				8DBB4B37199094590065087D /* Images.xcassets in Resources */,
 				8DBB4B29199094590065087D /* InfoPlist.strings in Resources */,
-				8DE0A7AE199B20C9009D28BB /* README.md in Resources */,
+				8DC9AA10199B219400288355 /* README.md in Resources */,
 				8DBB4B32199094590065087D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
