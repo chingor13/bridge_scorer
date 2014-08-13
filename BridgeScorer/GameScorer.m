@@ -77,6 +77,23 @@
             gameState.eastPointsOn = 0;
             gameMade = YES;
         }
+        
+        // slam checking
+        if(contract.bid == 6) {
+            // small slam
+            if(bidderIsVulnerable) {
+                gameScore.offenseAboveLine += 750;
+            } else {
+                gameScore.offenseAboveLine += 500;
+            }
+        } else if(contract.bid == 7) {
+            // grand slam
+            if(bidderIsVulnerable) {
+                gameScore.offenseAboveLine += 1500;
+            } else {
+                gameScore.offenseAboveLine += 1000;
+            }
+        }
     } else {
         if(bidderIsVulnerable) {
             if(contract.doubled) {

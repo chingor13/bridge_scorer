@@ -38,7 +38,6 @@
 }
 
 - (IBAction)reset:(id)sender {
-    NSLog(@"Resetting");
     self.contractResults = [[NSMutableArray alloc] init];
     self.gameStates = [[NSMutableArray alloc] init];
     [self.gameStates addObject:[[GameState alloc] init]];
