@@ -33,6 +33,16 @@
     self.topRightScores = @[];
     self.bottomLeftScores = @[];
     self.bottomRightScores = @[];
+    
+    UILabel *weLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width / 2, 30.0)];
+    weLabel.text = @"WE";
+    weLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:weLabel];
+    
+    UILabel *theyLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width / 2, 0.0, self.bounds.size.width / 2, 30.0)];
+    theyLabel.text = @"THEY";
+    theyLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:theyLabel];
 }
 
 - (void)setTopLeftScores:(NSArray *)topLeftScores
@@ -78,43 +88,54 @@
     [aPath moveToPoint:CGPointMake(middleX, 0.0)];
     [aPath addLineToPoint:CGPointMake(middleX, self.bounds.size.height)];
     
+    [aPath moveToPoint:CGPointMake(0.0, 30.0)];
+    [aPath addLineToPoint:CGPointMake(self.bounds.size.width, 30.0)];
+    
     [aPath stroke];
     
     NSInteger y = middleY - 30;
     for (NSNumber *number in self.topLeftScores) {
-        UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, middleX, 20)];
-        scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-        scoreLabel.textAlignment = NSTextAlignmentCenter;
-        [scoreLabel setTextColor:[UIColor blackColor]];
-        [self addSubview:scoreLabel];
-        y -= 30;
+        if([number intValue] > 0) {
+            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, middleX, 20)];
+            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
+            scoreLabel.textAlignment = NSTextAlignmentCenter;
+            [scoreLabel setTextColor:[UIColor blackColor]];
+            [self addSubview:scoreLabel];
+            y -= 30;
+        }
     }
     y = middleY - 30;
     for (NSNumber *number in self.topRightScores) {
-        UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, y, middleX, 20)];
-        scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-        scoreLabel.textAlignment = NSTextAlignmentCenter;
-        [scoreLabel setTextColor:[UIColor blackColor]];
-        [self addSubview:scoreLabel];
-        y -= 30;
+        if([number intValue] > 0) {
+            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, y, middleX, 20)];
+            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
+            scoreLabel.textAlignment = NSTextAlignmentCenter;
+            [scoreLabel setTextColor:[UIColor blackColor]];
+            [self addSubview:scoreLabel];
+            y -= 30;
+        }
     }
     y = middleY + 5;
     for (NSNumber *number in self.bottomLeftScores) {
-        UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, middleX, 20)];
-        scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-        scoreLabel.textAlignment = NSTextAlignmentCenter;
-        [scoreLabel setTextColor:[UIColor blackColor]];
-        [self addSubview:scoreLabel];
-        y += 30;
+        if([number intValue] > 0) {
+            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, middleX, 20)];
+            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
+            scoreLabel.textAlignment = NSTextAlignmentCenter;
+            [scoreLabel setTextColor:[UIColor blackColor]];
+            [self addSubview:scoreLabel];
+            y += 30;
+        }
     }
     y = middleY + 5;
     for (NSNumber *number in self.bottomRightScores) {
-        UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, y, middleX, 20)];
-        scoreLabel.text = [NSString stringWithFormat:@"%@", number];
-        scoreLabel.textAlignment = NSTextAlignmentCenter;
-        [scoreLabel setTextColor:[UIColor blackColor]];
-        [self addSubview:scoreLabel];
-        y += 30;
+        if([number intValue] > 0) {
+            UILabel *scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(middleX, y, middleX, 20)];
+            scoreLabel.text = [NSString stringWithFormat:@"%@", number];
+            scoreLabel.textAlignment = NSTextAlignmentCenter;
+            [scoreLabel setTextColor:[UIColor blackColor]];
+            [self addSubview:scoreLabel];
+            y += 30;
+        }
     }
 }
 

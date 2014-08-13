@@ -24,6 +24,11 @@
 
 @implementation GameViewController
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
