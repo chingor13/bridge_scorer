@@ -89,15 +89,15 @@
     GameScore *score = outcome.gameScore;
     
     if(result.contract.north) {
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
-        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseAboveLine]];
+        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseBelowLine]];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.defenseAboveLine]];
         self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:0]];
 
     } else {
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseAboveLine]];
-        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:score.offenseBelowLine]];
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInt:score.defenseAboveLine]];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseAboveLine]];
+        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseBelowLine]];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.defenseAboveLine]];
         self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:0]];
     }
     

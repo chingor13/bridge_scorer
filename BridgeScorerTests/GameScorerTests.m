@@ -33,9 +33,10 @@
     BridgeContract *contract = [[BridgeContract alloc] init];
     contract.bid = 3;
     contract.suit = CardSuitClubs;
-    contract.tricksMade = 10;
+    ContractResult *result = [[ContractResult alloc] initWithContract:contract];
+    result.tricksMade = 10;
     
-    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:gs];
     XCTAssertEqual(60, outcome.gameScore.offenseBelowLine, @"Failed");
     XCTAssertEqual(20, outcome.gameScore.offenseAboveLine, @"Failed");
 }
@@ -46,9 +47,10 @@
     BridgeContract *contract = [[BridgeContract alloc] init];
     contract.bid = 3;
     contract.suit = CardSuitDiamonds;
-    contract.tricksMade = 10;
+    ContractResult *result = [[ContractResult alloc] initWithContract:contract];
+    result.tricksMade = 10;
     
-    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:gs];
     XCTAssertEqual(60, outcome.gameScore.offenseBelowLine, @"Failed");
     XCTAssertEqual(20, outcome.gameScore.offenseAboveLine, @"Failed");
 }
@@ -59,9 +61,10 @@
     BridgeContract *contract = [[BridgeContract alloc] init];
     contract.bid = 3;
     contract.suit = CardSuitNoTrump;
-    contract.tricksMade = 10;
+    ContractResult *result = [[ContractResult alloc] initWithContract:contract];
+    result.tricksMade = 10;
     
-    ContractOutcome *outcome = [GameScorer calculateGameScore:contract inGameState:gs];
+    ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:gs];
     XCTAssertEqual(100, outcome.gameScore.offenseBelowLine, @"Failed");
     XCTAssertEqual(30, outcome.gameScore.offenseAboveLine, @"Failed");
     XCTAssert(outcome.gameState.northVulnerable, @"Expected north to be vulnerable");
