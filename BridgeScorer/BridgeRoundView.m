@@ -8,6 +8,12 @@
 
 #import "BridgeRoundView.h"
 
+@interface BridgeRoundView()
+
+@property (strong, nonatomic) NSMutableArray *scoreViews;
+
+@end
+
 @implementation BridgeRoundView
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,7 +21,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self setup];
+        [self reset];
     }
     return self;
 }
@@ -23,11 +29,11 @@
 - (void) awakeFromNib
 {
     [super awakeFromNib];
-    [self setup];
+    [self reset];
     
 }
 
-- (void)setup
+- (void)reset
 {
     self.topLeftScores = @[];
     self.topRightScores = @[];
@@ -73,6 +79,9 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    [self.scoreViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    self.scoreViews = [[NSMutableArray alloc] init];
+    
     // Drawing code
     UIBezierPath *aPath = [UIBezierPath bezierPath];
     
@@ -101,6 +110,7 @@
             scoreLabel.textAlignment = NSTextAlignmentCenter;
             [scoreLabel setTextColor:[UIColor blackColor]];
             [self addSubview:scoreLabel];
+            [self.scoreViews addObject:scoreLabel];
             y -= 30;
         }
     }
@@ -112,6 +122,7 @@
             scoreLabel.textAlignment = NSTextAlignmentCenter;
             [scoreLabel setTextColor:[UIColor blackColor]];
             [self addSubview:scoreLabel];
+            [self.scoreViews addObject:scoreLabel];
             y -= 30;
         }
     }
@@ -137,6 +148,7 @@
                 scoreLabel.textAlignment = NSTextAlignmentCenter;
                 [scoreLabel setTextColor:[UIColor blackColor]];
                 [self addSubview:scoreLabel];
+                [self.scoreViews addObject:scoreLabel];
                 leftY += 30;
             }
             if([right intValue] > 0) {
@@ -145,6 +157,7 @@
                 scoreLabel.textAlignment = NSTextAlignmentCenter;
                 [scoreLabel setTextColor:[UIColor blackColor]];
                 [self addSubview:scoreLabel];
+                [self.scoreViews addObject:scoreLabel];
                 rightY += 30;
             }
         }

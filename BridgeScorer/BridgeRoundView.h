@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSArray *bottomLeftScores;
 @property (strong, nonatomic) NSArray *bottomRightScores;
 
+- (void) reset;
 @end

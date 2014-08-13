@@ -107,7 +107,24 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-iQ-yf1">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-X1-3zN">
+                                        <rect key="frame" x="249" y="454" width="51" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Results">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="cSC-Vs-aWj" kind="push" identifier="Results Segue" id="kV2-7h-pb3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-XC-SAz">
+                                        <rect key="frame" x="100" y="454" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c2-iQ-yf1">
                                         <rect key="frame" x="20" y="454" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -120,33 +137,10 @@
                                             <segue destination="Gxa-00-Wa5" kind="push" identifier="Create Contract Segue" id="VAk-kS-aCB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-X1-3zN">
-                                        <rect key="frame" x="249" y="454" width="51" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Results">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="cSC-Vs-aWj" kind="push" identifier="Results Segue" id="kV2-7h-pb3"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-XC-SAz">
-                                        <rect key="frame" x="100" y="454" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="4Ls-f4-2CT"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="top" secondItem="CEC-XC-SAz" secondAttribute="top" id="8Lk-DC-ke0"/>
                                     <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="AWa-yF-Yhp"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="baseline" secondItem="Ahn-X1-3zN" secondAttribute="baseline" id="AaN-mj-HIg"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="bottom" secondItem="CEC-XC-SAz" secondAttribute="bottom" id="CIV-fx-eiC"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="JF5-SK-Ycl"/>
-                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="qcK-wZ-0Th"/>
                                     <constraint firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" constant="20" symbolic="YES" id="zwv-LR-i3k"/>
                                 </constraints>
                             </view>
@@ -159,7 +153,13 @@
                             <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="TGw-Qd-M8O" secondAttribute="bottom" id="tF8-wc-jkF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Single Game" id="rSB-S2-izh"/>
+                    <navigationItem key="navigationItem" title="Single Game" id="rSB-S2-izh">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="fDL-We-Nau">
+                            <connections>
+                                <action selector="reset:" destination="6F4-dR-lAP" id="zzF-uE-5vZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="5c2-iQ-yf1" id="I8h-lp-RFV"/>
                         <outlet property="contractLabel" destination="CEC-XC-SAz" id="1bm-IY-7qh"/>
@@ -277,9 +277,6 @@
                                 <state key="normal" title="Single">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6F4-dR-lAP" kind="push" identifier="Single Game Segue" id="ncB-B7-hf2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-Qp-GBH">
                                 <rect key="frame" x="137" y="321" width="48" height="30"/>
@@ -298,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799" y="153"/>
+            <point key="canvasLocation" x="715" y="655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P5P-9k-itp">
@@ -311,7 +308,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="gip-oC-J6L"/>
+                        <segue destination="6F4-dR-lAP" kind="relationship" relationship="rootViewController" id="zoy-5h-bS7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdB-YZ-U5f" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -34,15 +34,22 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    [self reset:nil];
+}
+
+- (IBAction)reset:(id)sender {
+    NSLog(@"Resetting");
     self.contractResults = [[NSMutableArray alloc] init];
     self.gameStates = [[NSMutableArray alloc] init];
     [self.gameStates addObject:[[GameState alloc] init]];
+    [self.gameView reset];
+    [self setContract:nil];
 }
 
 - (void)setContract:(BridgeContract *)contract
 {
-    self.currentContract = contract;
-    if(self.currentContract) {
+    _currentContract = contract;
+    if(contract) {
         // change Add button to Edit
         self.addButton.titleLabel.text = @"Edit";
         
