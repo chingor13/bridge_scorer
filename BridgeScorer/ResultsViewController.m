@@ -22,6 +22,7 @@
     self.tricksArray = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13"];
     
     // Do any additional setup after loading the view.
+    [self.picker selectRow:(6+self.contract.bid) inComponent:0 animated:NO];
 }
 
 - (void)setContract:(BridgeContract *)contract
