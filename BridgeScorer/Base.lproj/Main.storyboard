@@ -213,18 +213,6 @@
                                 <rect key="frame" x="136" y="91" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="East/West" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-NA-ss9">
-                                <rect key="frame" x="222" y="96" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North/South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wul-Ra-8YN">
-                                <rect key="frame" x="20" y="96" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-q8-ODL">
                                 <rect key="frame" x="20" y="430" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,23 +223,49 @@
                                     <action selector="saveContract:" destination="Gxa-00-Wa5" eventType="touchUpInside" id="swJ-Yu-lBg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnz-92-gaw" colorLabel="IBBuiltInLabel-Gray">
+                                <rect key="frame" x="20" y="92" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WE">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="weTouch:" destination="Gxa-00-Wa5" eventType="touchUpInside" id="mmp-fI-n5T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohn-ov-Byg">
+                                <rect key="frame" x="193" y="92" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="THEY">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="theyTouch:" destination="Gxa-00-Wa5" eventType="touchUpInside" id="NTz-wj-UbX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wul-Ra-8YN" firstAttribute="leading" secondItem="AsT-PC-ye8" secondAttribute="leading" id="0vw-5g-ZMq"/>
-                            <constraint firstItem="AsT-PC-ye8" firstAttribute="leading" secondItem="Op2-q8-ODL" secondAttribute="leading" id="7SH-KQ-n9G"/>
-                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="centerY" secondItem="3Jc-NA-ss9" secondAttribute="centerY" id="9ct-UU-XEN"/>
-                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerX" secondItem="Vna-hw-Xj1" secondAttribute="centerX" id="BG4-NS-GeP"/>
-                            <constraint firstItem="3Jc-NA-ss9" firstAttribute="trailing" secondItem="AsT-PC-ye8" secondAttribute="trailing" id="CR5-Zf-gKg"/>
-                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerY" secondItem="TgV-FC-4nN" secondAttribute="centerY" id="K3E-TC-7E2"/>
-                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerX" secondItem="AsT-PC-ye8" secondAttribute="centerX" id="LX8-dF-ym7"/>
-                            <constraint firstItem="20h-1F-9dN" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" id="Vgh-oR-rRY"/>
-                            <constraint firstItem="wul-Ra-8YN" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" constant="20" symbolic="YES" id="Xov-s7-Zsk"/>
-                            <constraint firstItem="wul-Ra-8YN" firstAttribute="baseline" secondItem="3Jc-NA-ss9" secondAttribute="baseline" id="aN6-WJ-NXX"/>
-                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="top" secondItem="GSv-sw-53X" secondAttribute="bottom" constant="27" id="cDt-li-umz"/>
-                            <constraint firstAttribute="bottom" secondItem="Op2-q8-ODL" secondAttribute="bottom" constant="20" symbolic="YES" id="nMg-qm-iX7"/>
-                            <constraint firstItem="Op2-q8-ODL" firstAttribute="top" secondItem="AsT-PC-ye8" secondAttribute="bottom" constant="8" symbolic="YES" id="vSK-wH-hes"/>
-                            <constraint firstAttribute="trailing" secondItem="3Jc-NA-ss9" secondAttribute="trailing" constant="20" symbolic="YES" id="xJk-i2-kYq"/>
+                            <constraint firstAttribute="bottom" secondItem="Op2-q8-ODL" secondAttribute="bottom" constant="20" symbolic="YES" id="1JS-rY-RBC"/>
+                            <constraint firstAttribute="trailing" secondItem="ohn-ov-Byg" secondAttribute="trailing" constant="20" symbolic="YES" id="50Z-LP-3hd"/>
+                            <constraint firstItem="Lnz-92-gaw" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" constant="20" symbolic="YES" id="7rd-Bt-YO1"/>
+                            <constraint firstItem="Op2-q8-ODL" firstAttribute="top" secondItem="AsT-PC-ye8" secondAttribute="bottom" constant="8" symbolic="YES" id="DD5-JS-eF2"/>
+                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" constant="136" id="Eca-a5-JHT"/>
+                            <constraint firstItem="Op2-q8-ODL" firstAttribute="leading" secondItem="AsT-PC-ye8" secondAttribute="leading" id="Ef0-54-YXu"/>
+                            <constraint firstItem="Lnz-92-gaw" firstAttribute="leading" secondItem="AsT-PC-ye8" secondAttribute="leading" id="Gcj-cN-zOe"/>
+                            <constraint firstItem="AsT-PC-ye8" firstAttribute="centerX" secondItem="20h-1F-9dN" secondAttribute="centerX" id="KAX-EQ-aHk"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerX" secondItem="Vna-hw-Xj1" secondAttribute="centerX" id="Mxc-2K-M4u"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" id="SVi-HS-4DD"/>
+                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="top" secondItem="GSv-sw-53X" secondAttribute="bottom" constant="27" id="VzF-H1-wcw"/>
+                            <constraint firstItem="Lnz-92-gaw" firstAttribute="baseline" secondItem="ohn-ov-Byg" secondAttribute="baseline" id="bo3-4J-GE0"/>
+                            <constraint firstItem="20h-1F-9dN" firstAttribute="centerY" secondItem="TgV-FC-4nN" secondAttribute="centerY" id="dHi-3a-Pr0"/>
+                            <constraint firstItem="ohn-ov-Byg" firstAttribute="bottom" secondItem="Vna-hw-Xj1" secondAttribute="bottom" id="dp9-Ed-3Y7"/>
+                            <constraint firstItem="ohn-ov-Byg" firstAttribute="leading" secondItem="TgV-FC-4nN" secondAttribute="leading" constant="193" id="e1F-Fg-vH0"/>
+                            <constraint firstItem="AsT-PC-ye8" firstAttribute="trailing" secondItem="ohn-ov-Byg" secondAttribute="trailing" id="hZL-K4-KAh"/>
+                            <constraint firstItem="Vna-hw-Xj1" firstAttribute="leading" secondItem="Lnz-92-gaw" secondAttribute="trailing" constant="8" symbolic="YES" id="rDH-xX-8IO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Game" id="1ve-pO-M4c"/>

@@ -33,6 +33,14 @@
     return self;
 }
 
+- (IBAction)weTouch:(id)sender {
+    [self.teamSwitch setOn:NO animated:YES];
+}
+
+- (IBAction)theyTouch:(id)sender {
+    [self.teamSwitch setOn:YES animated:YES];
+}
+
 - (IBAction)contractDoublingChanged:(id)sender
 {
     if([sender selectedSegmentIndex] == 2) {
