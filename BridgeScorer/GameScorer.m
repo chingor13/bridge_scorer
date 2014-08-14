@@ -76,6 +76,12 @@
             gameState.northPointsOn = 0;
             gameState.eastPointsOn = 0;
             gameMade = YES;
+        } else {
+            if(contract.north) {
+                gameState.northPointsOn += gameScore.offenseBelowLine;
+            } else {
+                gameState.eastPointsOn += gameScore.offenseBelowLine;
+            }
         }
         
         // slam checking
