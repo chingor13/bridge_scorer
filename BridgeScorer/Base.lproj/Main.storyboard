@@ -100,11 +100,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eyU-7R-I0Q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9ao-DH-w1s">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-mS-CwN" customClass="BridgeRoundView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-X1-3zN">
@@ -128,7 +128,7 @@
                                         <rect key="frame" x="20" y="366" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="d4J-yY-M0k"/>
+                                            <constraint firstAttribute="width" constant="30" id="D8u-xo-0wj"/>
                                         </constraints>
                                         <state key="normal" title="Add">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,25 +140,26 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="top" secondItem="CEC-XC-SAz" secondAttribute="top" id="1zO-qg-IKz"/>
-                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="AMJ-aC-ihy"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="G1k-Zf-13L"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" id="L1K-mC-SVy"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="baseline" secondItem="Ahn-X1-3zN" secondAttribute="baseline" id="M2T-Co-JJt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" constant="20" symbolic="YES" id="OhD-9Y-hZN"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="UWo-jF-jxu"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="lIc-x2-9ni"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="A6l-VS-kvc"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="top" secondItem="5c2-iQ-yf1" secondAttribute="top" id="Asl-p0-i6c"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="baseline" secondItem="Ahn-X1-3zN" secondAttribute="baseline" id="GQz-uU-Z5I"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" id="avn-xs-pyB"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="goi-xg-7yQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="rO4-si-Lez"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" constant="20" symbolic="YES" id="u8f-cj-5Jh"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="wEH-if-K65"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ok8-mS-CwN" secondAttribute="bottom" id="H3y-GJ-8Wf"/>
-                            <constraint firstItem="ok8-mS-CwN" firstAttribute="leading" secondItem="9ao-DH-w1s" secondAttribute="leading" id="OqT-rg-i1v"/>
-                            <constraint firstAttribute="trailing" secondItem="ok8-mS-CwN" secondAttribute="trailing" id="eqv-Ul-ThA"/>
-                            <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="TGw-Qd-M8O" secondAttribute="bottom" id="uy4-T2-ZwZ"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="9ao-DH-w1s" secondAttribute="top" id="FtE-1n-Pbk"/>
+                            <constraint firstAttribute="bottom" secondItem="ok8-mS-CwN" secondAttribute="bottom" id="Jj1-18-ZsB"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="leading" secondItem="9ao-DH-w1s" secondAttribute="leading" id="Tgf-1E-UTA"/>
+                            <constraint firstAttribute="trailing" secondItem="ok8-mS-CwN" secondAttribute="trailing" id="ohB-4F-ify"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Single Game" id="rSB-S2-izh">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="fDL-We-Nau">
                             <connections>

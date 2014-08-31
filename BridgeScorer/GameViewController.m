@@ -89,21 +89,21 @@
     GameScore *score = outcome.gameScore;
     
     if(result.contract.north) {
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseAboveLine]];
-        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseBelowLine]];
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.defenseAboveLine]];
-        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:0]];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:@(score.offenseAboveLine)];
+        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:@(score.offenseBelowLine)];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:@(score.defenseAboveLine)];
+        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:@(0)];
 
     } else {
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseAboveLine]];
-        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInteger:score.offenseBelowLine]];
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:[NSNumber numberWithInteger:score.defenseAboveLine]];
-        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:0]];
+        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:@(score.offenseAboveLine)];
+        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:@(score.offenseBelowLine)];
+        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:@(score.defenseAboveLine)];
+        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:@(0)];
     }
     
     if(outcome.gameMade) {
-        self.gameView.bottomLeftScores =[self.gameView.bottomLeftScores arrayByAddingObject:[NSNumber numberWithInt:-1]];
-        self.gameView.bottomRightScores =[self.gameView.bottomRightScores arrayByAddingObject:[NSNumber numberWithInt:-1]];
+        self.gameView.bottomLeftScores =[self.gameView.bottomLeftScores arrayByAddingObject:@(-1)];
+        self.gameView.bottomRightScores =[self.gameView.bottomRightScores arrayByAddingObject:@(-1)];
     }
 }
 
