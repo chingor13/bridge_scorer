@@ -67,7 +67,7 @@
     _currentContract = contract;
     if(contract) {
         // change Add button to Edit
-        self.addButton.titleLabel.text = @"Edit";
+        [self.addButton setTitle:@"Edit" forState:UIControlStateNormal];
         
         // set current contract label to the contract string
         self.contractLabel.text = [contract shortDescription];
@@ -81,7 +81,7 @@
         self.resultsButton.enabled = YES;
     } else {
         // change Edit button to Add
-        self.addButton.titleLabel.text = @"Add";
+        [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
         
         // clear current contract label
         self.contractLabel.text = @"";
