@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *contractLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *resultsButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property (strong, nonatomic) NSMutableArray *contracts;
 @property (strong, nonatomic) NSMutableArray *gameStates;
 @property (strong, nonatomic) NSMutableArray *contractResults;
@@ -53,13 +54,21 @@
     if (self.currentContract) {
         // if we have a current contract, set it to nil
         [self setContract: nil];
+        
+        if ([self.gameStates count] == 1) {
+            self.undoButton.enabled = NO;
+        }
     } else {
         // undo the last results and set the current contract to the previous contract
         BridgeContract *lastContract = [self.contracts lastObject];
         [self.contracts removeLastObject];
         [self setContract:lastContract];
+        
+        [self.gameStates removeLastObject];
+        [self.contractResults removeLastObject];
+        
+        [self.gameView undoLast];
     }
-    [self.gameView undoLast];
 }
 
 - (void)setContract:(BridgeContract *)contract
@@ -79,6 +88,7 @@
         
         // enable Results button
         self.resultsButton.enabled = YES;
+        self.undoButton.enabled = YES;
     } else {
         // change Edit button to Add
         [self.addButton setTitle:@"Add" forState:UIControlStateNormal];

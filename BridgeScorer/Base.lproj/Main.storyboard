@@ -137,7 +137,7 @@
                                             <segue destination="Gxa-00-Wa5" kind="push" identifier="Create Contract Segue" id="VAk-kS-aCB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJH-qd-buC">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJH-qd-buC">
                                         <rect key="frame" x="262" y="328" width="38" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Undo">
@@ -184,6 +184,7 @@
                         <outlet property="contractLabel" destination="CEC-XC-SAz" id="1bm-IY-7qh"/>
                         <outlet property="gameView" destination="ok8-mS-CwN" id="KG9-3w-hk5"/>
                         <outlet property="resultsButton" destination="Ahn-X1-3zN" id="cUr-gs-ZqC"/>
+                        <outlet property="undoButton" destination="CJH-qd-buC" id="GzS-Wc-tIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw4-Wf-Bh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
