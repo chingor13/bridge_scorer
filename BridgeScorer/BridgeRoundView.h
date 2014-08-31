@@ -10,10 +10,12 @@
 
 @interface BridgeRoundView : UIView
 
-@property (strong, nonatomic) NSArray *topLeftScores;
-@property (strong, nonatomic) NSArray *topRightScores;
-@property (strong, nonatomic) NSArray *bottomLeftScores;
-@property (strong, nonatomic) NSArray *bottomRightScores;
+- (void)reset;
+- (void)undoLast;
+- (void)addGameLine:(BOOL) we;
+- (void)addTopLeftScore:(NSNumber *)number;
+- (void)addTopRightScore:(NSNumber *)number;
+- (void)addBottomLeftScore:(NSNumber *)number;
+- (void)addBottomRightScore:(NSNumber *)number;
 
-- (void) reset;
 @end

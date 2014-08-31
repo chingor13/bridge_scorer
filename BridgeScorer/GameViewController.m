@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *contractLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *resultsButton;
+@property (strong, nonatomic) NSMutableArray *contracts;
 @property (strong, nonatomic) NSMutableArray *gameStates;
 @property (strong, nonatomic) NSMutableArray *contractResults;
 @end
@@ -37,12 +38,28 @@
     [self reset:nil];
 }
 
-- (IBAction)reset:(id)sender {
+- (IBAction)reset:(id)sender
+{
+    self.contracts = [[NSMutableArray alloc] init];
     self.contractResults = [[NSMutableArray alloc] init];
     self.gameStates = [[NSMutableArray alloc] init];
     [self.gameStates addObject:[[GameState alloc] init]];
     [self.gameView reset];
     [self setContract:nil];
+}
+
+- (void)undo
+{
+    if (self.currentContract) {
+        // if we have a current contract, set it to nil
+        [self setContract: nil];
+    } else {
+        // undo the last results and set the current contract to the previous contract
+        BridgeContract *lastContract = [self.contracts lastObject];
+        [self.contracts removeLastObject];
+        [self setContract:lastContract];
+    }
+    [self.gameView undoLast];
 }
 
 - (void)setContract:(BridgeContract *)contract
@@ -77,8 +94,13 @@
 - (void)setResults:(ContractResult *)result
 {
     [self addResult:result];
+    [self.contracts addObject:self.currentContract];
     // unset current contract
     [self setContract: nil];
+}
+
+- (IBAction)undoClick:(id)sender {
+    [self undo];
 }
 
 - (void)addResult:(ContractResult *)result
@@ -89,21 +111,19 @@
     GameScore *score = outcome.gameScore;
     
     if(result.contract.north) {
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:@(score.offenseAboveLine)];
-        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:@(score.offenseBelowLine)];
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:@(score.defenseAboveLine)];
-        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:@(0)];
-
+        [self.gameView addTopLeftScore:@(score.offenseAboveLine)];
+        [self.gameView addBottomLeftScore:@(score.offenseBelowLine)];
+        [self.gameView addTopRightScore:@(score.defenseAboveLine)];
+        [self.gameView addBottomRightScore:@(0)];
     } else {
-        self.gameView.topRightScores = [self.gameView.topRightScores arrayByAddingObject:@(score.offenseAboveLine)];
-        self.gameView.bottomRightScores = [self.gameView.bottomRightScores arrayByAddingObject:@(score.offenseBelowLine)];
-        self.gameView.topLeftScores = [self.gameView.topLeftScores arrayByAddingObject:@(score.defenseAboveLine)];
-        self.gameView.bottomLeftScores = [self.gameView.bottomLeftScores arrayByAddingObject:@(0)];
+        [self.gameView addTopRightScore:@(score.offenseAboveLine)];
+        [self.gameView addBottomRightScore:@(score.offenseBelowLine)];
+        [self.gameView addTopLeftScore:@(score.defenseAboveLine)];
+        [self.gameView addBottomLeftScore:@(0)];
     }
     
     if(outcome.gameMade) {
-        self.gameView.bottomLeftScores =[self.gameView.bottomLeftScores arrayByAddingObject:@(-1)];
-        self.gameView.bottomRightScores =[self.gameView.bottomRightScores arrayByAddingObject:@(-1)];
+        [self.gameView addGameLine:self.currentContract.north];
     }
 }
 

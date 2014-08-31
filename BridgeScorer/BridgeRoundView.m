@@ -11,7 +11,10 @@
 @interface BridgeRoundView()
 
 @property (strong, nonatomic) NSMutableArray *scoreViews;
-
+@property (strong, nonatomic) NSMutableArray *topLeftScores;
+@property (strong, nonatomic) NSMutableArray *topRightScores;
+@property (strong, nonatomic) NSMutableArray *bottomLeftScores;
+@property (strong, nonatomic) NSMutableArray *bottomRightScores;
 @end
 
 @implementation BridgeRoundView
@@ -30,15 +33,14 @@
 {
     [super awakeFromNib];
     [self reset];
-    
 }
 
 - (void)reset
 {
-    self.topLeftScores = @[];
-    self.topRightScores = @[];
-    self.bottomLeftScores = @[];
-    self.bottomRightScores = @[];
+    self.topLeftScores = [[NSMutableArray alloc] init];
+    self.topRightScores = [[NSMutableArray alloc] init];
+    self.bottomLeftScores = [[NSMutableArray alloc] init];
+    self.bottomRightScores = [[NSMutableArray alloc] init];
     
     UILabel *weLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width / 2, 30.0)];
     weLabel.text = @"WE";
@@ -51,27 +53,54 @@
     [self addSubview:theyLabel];
 }
 
-- (void)setTopLeftScores:(NSArray *)topLeftScores
+- (void)undoLast
 {
-    _topLeftScores = topLeftScores;
+    [self.topLeftScores removeLastObject];
+    [self.topRightScores removeLastObject];
+    
+    // if the last thing was a game, remove it and the last scores
+    if ([[self.bottomLeftScores lastObject] intValue] < 0) {
+        [self.bottomLeftScores removeLastObject];
+        [self.bottomRightScores removeLastObject];
+    }
+    [self.bottomLeftScores removeLastObject];
+    [self.bottomRightScores removeLastObject];
     [self setNeedsDisplay];
 }
 
-- (void)setTopRightScores:(NSArray *)topRightScores
+- (void)addTopLeftScore:(NSNumber *)number
 {
-    _topRightScores = topRightScores;
+    [self.topLeftScores addObject:number];
     [self setNeedsDisplay];
 }
 
-- (void)setBottomLeftScores:(NSArray *)bottomLeftScores
+- (void)addTopRightScore:(NSNumber *)number
 {
-    _bottomLeftScores = bottomLeftScores;
+    [self.topRightScores addObject:number];
     [self setNeedsDisplay];
 }
 
-- (void)setBottomRightScores:(NSArray *)bottomRightScores
+- (void)addBottomLeftScore:(NSNumber *)number
 {
-    _bottomRightScores = bottomRightScores;
+    [self.bottomLeftScores addObject:number];
+    [self setNeedsDisplay];
+}
+
+- (void)addBottomRightScore:(NSNumber *)number
+{
+    [self.bottomRightScores addObject:number];
+    [self setNeedsDisplay];
+}
+
+- (void) addGameLine:(BOOL)we
+{
+    if (we) {
+        [self addBottomLeftScore:@(-1)];
+        [self addBottomRightScore:@(-1)];
+    } else {
+        [self addBottomLeftScore:@(-2)];
+        [self addBottomRightScore:@(-2)];
+    }
     [self setNeedsDisplay];
 }
 
