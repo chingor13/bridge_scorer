@@ -18,10 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *contractLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *resultsButton;
-@property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property (strong, nonatomic) NSMutableArray *contracts;
 @property (strong, nonatomic) NSMutableArray *gameStates;
 @property (strong, nonatomic) NSMutableArray *contractResults;
+@property BOOL canUndo;
 @end
 
 @implementation GameViewController
@@ -41,6 +41,7 @@
 
 - (IBAction)reset:(id)sender
 {
+    self.canUndo = NO;
     self.contracts = [[NSMutableArray alloc] init];
     self.contractResults = [[NSMutableArray alloc] init];
     self.gameStates = [[NSMutableArray alloc] init];
@@ -51,12 +52,16 @@
 
 - (void)undo
 {
+    if(!self.canUndo){
+        return;
+    }
+    
     if (self.currentContract) {
         // if we have a current contract, set it to nil
         [self setContract: nil];
         
         if ([self.gameStates count] == 1) {
-            self.undoButton.enabled = NO;
+            self.canUndo = NO;
         }
     } else {
         // undo the last results and set the current contract to the previous contract
@@ -68,6 +73,12 @@
         [self.contractResults removeLastObject];
         
         [self.gameView undoLast];
+    }
+}
+
+- (IBAction)undoSwipe:(UISwipeGestureRecognizer *)recognizer {
+    if(recognizer.numberOfTouches == 2) {
+        [self undo];
     }
 }
 
@@ -88,7 +99,7 @@
         
         // enable Results button
         self.resultsButton.enabled = YES;
-        self.undoButton.enabled = YES;
+        self.canUndo = YES;
     } else {
         // change Edit button to Add
         [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
@@ -107,10 +118,6 @@
     [self.contracts addObject:self.currentContract];
     // unset current contract
     [self setContract: nil];
-}
-
-- (IBAction)undoClick:(id)sender {
-    [self undo];
 }
 
 - (void)addResult:(ContractResult *)result

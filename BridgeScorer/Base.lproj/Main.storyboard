@@ -128,7 +128,7 @@
                                         <rect key="frame" x="20" y="366" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="nGG-k1-72Y"/>
+                                            <constraint firstAttribute="width" constant="30" id="4d8-aG-5Ln"/>
                                         </constraints>
                                         <state key="normal" title="Add">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,38 +137,30 @@
                                             <segue destination="Gxa-00-Wa5" kind="push" identifier="Create Contract Segue" id="VAk-kS-aCB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJH-qd-buC">
-                                        <rect key="frame" x="262" y="328" width="38" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Undo">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="undoClick:" destination="6F4-dR-lAP" eventType="touchUpInside" id="0XQ-A5-hQt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="top" secondItem="5c2-iQ-yf1" secondAttribute="top" id="1hd-Jq-5uH"/>
-                                    <constraint firstAttribute="trailing" secondItem="CJH-qd-buC" secondAttribute="trailing" constant="20" symbolic="YES" id="2Hh-FO-IPg"/>
-                                    <constraint firstItem="Ahn-X1-3zN" firstAttribute="baseline" secondItem="5c2-iQ-yf1" secondAttribute="baseline" id="9kz-ZJ-tHN"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="ASu-DQ-xVA"/>
-                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="NHm-Di-9mZ"/>
-                                    <constraint firstItem="CJH-qd-buC" firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" id="aII-QH-uPt"/>
-                                    <constraint firstItem="Ahn-X1-3zN" firstAttribute="top" secondItem="CJH-qd-buC" secondAttribute="bottom" constant="8" symbolic="YES" id="eqw-G3-raQ"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" id="fX1-Gp-X67"/>
-                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="qPC-2J-VlB"/>
-                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="rsd-05-Yh1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ahn-X1-3zN" secondAttribute="trailing" constant="20" symbolic="YES" id="354-3g-geG"/>
+                                    <constraint firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" constant="20" symbolic="YES" id="Smj-Xh-s7K"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="leading" secondItem="ok8-mS-CwN" secondAttribute="leading" constant="20" symbolic="YES" id="a0r-Nr-UZb"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="bottom" secondItem="5c2-iQ-yf1" secondAttribute="bottom" id="axd-l4-bcj"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="top" secondItem="CEC-XC-SAz" secondAttribute="top" id="b4l-6S-DGU"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="centerX" secondItem="ok8-mS-CwN" secondAttribute="centerX" id="d4M-T5-ni6"/>
+                                    <constraint firstItem="5c2-iQ-yf1" firstAttribute="baseline" secondItem="Ahn-X1-3zN" secondAttribute="baseline" id="t2j-4i-hCM"/>
+                                    <constraint firstItem="CEC-XC-SAz" firstAttribute="leading" secondItem="5c2-iQ-yf1" secondAttribute="trailing" constant="50" id="w3r-oW-7sv"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tRC-Iy-anQ" appends="YES" id="td5-R4-T8U"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ok8-mS-CwN" firstAttribute="leading" secondItem="9ao-DH-w1s" secondAttribute="leading" id="PGx-BC-GiI"/>
-                            <constraint firstAttribute="trailing" secondItem="ok8-mS-CwN" secondAttribute="trailing" id="cbI-Uu-rCw"/>
-                            <constraint firstAttribute="bottom" secondItem="ok8-mS-CwN" secondAttribute="bottom" id="e5G-va-YOu"/>
-                            <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="9ao-DH-w1s" secondAttribute="top" id="ibo-NU-rmG"/>
+                            <constraint firstAttribute="bottom" secondItem="ok8-mS-CwN" secondAttribute="bottom" id="Il4-xt-v5f"/>
+                            <constraint firstAttribute="trailing" secondItem="ok8-mS-CwN" secondAttribute="trailing" id="Lpm-Js-yWV"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="leading" secondItem="9ao-DH-w1s" secondAttribute="leading" id="OvC-Mz-VlE"/>
+                            <constraint firstItem="ok8-mS-CwN" firstAttribute="top" secondItem="9ao-DH-w1s" secondAttribute="top" id="lkd-L0-hKE"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -184,10 +176,14 @@
                         <outlet property="contractLabel" destination="CEC-XC-SAz" id="1bm-IY-7qh"/>
                         <outlet property="gameView" destination="ok8-mS-CwN" id="KG9-3w-hk5"/>
                         <outlet property="resultsButton" destination="Ahn-X1-3zN" id="cUr-gs-ZqC"/>
-                        <outlet property="undoButton" destination="CJH-qd-buC" id="GzS-Wc-tIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw4-Wf-Bh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="tRC-Iy-anQ">
+                    <connections>
+                        <action selector="undoSwipe:" destination="6F4-dR-lAP" id="zQp-Oc-LMg"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1282" y="153"/>
         </scene>
