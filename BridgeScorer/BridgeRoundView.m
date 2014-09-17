@@ -10,11 +10,15 @@
 
 @interface BridgeRoundView()
 
+@property (strong, nonatomic) NSMutableArray *contracts;
 @property (strong, nonatomic) NSMutableArray *scoreViews;
 @property (strong, nonatomic) NSMutableArray *topLeftScores;
 @property (strong, nonatomic) NSMutableArray *topRightScores;
 @property (strong, nonatomic) NSMutableArray *bottomLeftScores;
 @property (strong, nonatomic) NSMutableArray *bottomRightScores;
+@property (strong, nonatomic) UILabel *weContracts;
+@property (strong, nonatomic) UILabel *theyContracts;
+
 @end
 
 @implementation BridgeRoundView
@@ -37,6 +41,8 @@
 
 - (void)reset
 {
+    NSInteger middleX = self.bounds.size.width / 2;
+    self.contracts = [[NSMutableArray alloc] init];
     self.topLeftScores = [[NSMutableArray alloc] init];
     self.topRightScores = [[NSMutableArray alloc] init];
     self.bottomLeftScores = [[NSMutableArray alloc] init];
@@ -44,13 +50,26 @@
     
     UILabel *weLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width / 2, 30.0)];
     weLabel.text = @"WE";
+    weLabel.adjustsFontSizeToFitWidth = YES;
     weLabel.textAlignment = NSTextAlignmentCenter;
+    weLabel.minimumScaleFactor = 0.3f;
     [self addSubview:weLabel];
     
     UILabel *theyLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width / 2, 0.0, self.bounds.size.width / 2, 30.0)];
     theyLabel.text = @"THEY";
+    theyLabel.adjustsFontSizeToFitWidth = YES;
     theyLabel.textAlignment = NSTextAlignmentCenter;
+    theyLabel.minimumScaleFactor = 0.3f;
     [self addSubview:theyLabel];
+    
+    self.weContracts = [[UILabel alloc] initWithFrame:CGRectMake(0, 35, middleX, 20)];
+    self.weContracts.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.weContracts];
+    self.theyContracts = [[UILabel alloc] initWithFrame:CGRectMake(middleX, 35, middleX, 20)];
+    self.theyContracts.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.theyContracts];
+    
+    [self setNeedsDisplay];
 }
 
 - (void)undoLast
@@ -65,7 +84,13 @@
     }
     [self.bottomLeftScores removeLastObject];
     [self.bottomRightScores removeLastObject];
+    [self.contracts removeLastObject];
     [self setNeedsDisplay];
+}
+
+- (void)addContract:(BridgeContract *)contract
+{
+    [self.contracts addObject:contract];
 }
 
 - (void)addTopLeftScore:(NSNumber *)number
@@ -156,6 +181,10 @@
         }
     }
     
+
+    self.weContracts.text = [self contractDescriptionsForPredicate:[NSPredicate predicateWithFormat:@"north == YES"]];
+    self.theyContracts.text = [self contractDescriptionsForPredicate:[NSPredicate predicateWithFormat:@"north == NO"]];
+    
     aPath = [UIBezierPath bezierPath];
     aPath.lineWidth = 1.0;
     NSInteger leftY = middleY + 10;
@@ -195,5 +224,13 @@
     [aPath stroke];
 }
 
+- (NSString *) contractDescriptionsForPredicate:(NSPredicate *)predicate
+{
+    NSMutableArray *strings = [[NSMutableArray alloc] init];
+    for (BridgeContract *contract in [self.contracts filteredArrayUsingPredicate:predicate]) {
+        [strings addObject:[contract shortDescription]];
+    }
+    return [strings componentsJoinedByString:@", "];
+}
 
 @end

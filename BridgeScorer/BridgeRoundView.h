@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BridgeContract.h"
 
 @interface BridgeRoundView : UIView
 
@@ -17,5 +18,6 @@
 - (void)addTopRightScore:(NSNumber *)number;
 - (void)addBottomLeftScore:(NSNumber *)number;
 - (void)addBottomRightScore:(NSNumber *)number;
+- (void)addContract:(BridgeContract *)contract;
 
 @end

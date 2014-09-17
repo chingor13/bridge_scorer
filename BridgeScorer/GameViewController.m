@@ -122,6 +122,7 @@
 
 - (void)addResult:(ContractResult *)result
 {
+    [self.gameView addContract:result.contract];
     [self.contractResults addObject:result];
     ContractOutcome *outcome = [GameScorer calculateGameScore:result inGameState:[self currentState]];
     [self.gameStates addObject:outcome.gameState];
