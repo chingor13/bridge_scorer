@@ -197,6 +197,17 @@
             NSInteger maxY = (leftY > rightY) ? leftY : rightY;
             [aPath moveToPoint:CGPointMake(0, maxY)];
             [aPath addLineToPoint:CGPointMake(self.bounds.size.width,maxY)];
+            if ([left intValue] == -1) {
+                // we game
+                [aPath moveToPoint:CGPointMake(10, maxY - 10)];
+                [aPath addLineToPoint:CGPointMake(0, maxY)];
+                [aPath addLineToPoint:CGPointMake(10, maxY + 10)];
+            } else {
+                // they game
+                [aPath moveToPoint:CGPointMake(self.bounds.size.width - 10, maxY - 10)];
+                [aPath addLineToPoint:CGPointMake(self.bounds.size.width, maxY)];
+                [aPath addLineToPoint:CGPointMake(self.bounds.size.width - 10, maxY + 10)];
+            }
             leftY = maxY + 10;
             rightY = maxY + 10;
         } else {
