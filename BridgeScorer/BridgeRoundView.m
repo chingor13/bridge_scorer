@@ -18,6 +18,8 @@
 @property (strong, nonatomic) NSMutableArray *bottomRightScores;
 @property (strong, nonatomic) UILabel *weContracts;
 @property (strong, nonatomic) UILabel *theyContracts;
+@property (strong, nonatomic) UILabel *weLabel;
+@property (strong, nonatomic) UILabel *theyLabel;
 
 @end
 
@@ -48,23 +50,27 @@
     self.bottomLeftScores = [[NSMutableArray alloc] init];
     self.bottomRightScores = [[NSMutableArray alloc] init];
     
-    UILabel *weLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width / 2, 30.0)];
-    weLabel.text = @"WE";
-    weLabel.adjustsFontSizeToFitWidth = YES;
-    weLabel.textAlignment = NSTextAlignmentCenter;
-    weLabel.minimumScaleFactor = 0.3f;
-    [self addSubview:weLabel];
+    [self.weLabel removeFromSuperview];
+    self.weLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width / 2, 30.0)];
+    self.weLabel.text = @"WE";
+    self.weLabel.adjustsFontSizeToFitWidth = YES;
+    self.weLabel.textAlignment = NSTextAlignmentCenter;
+    self.weLabel.minimumScaleFactor = 0.3f;
+    [self addSubview:self.weLabel];
     
-    UILabel *theyLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width / 2, 0.0, self.bounds.size.width / 2, 30.0)];
-    theyLabel.text = @"THEY";
-    theyLabel.adjustsFontSizeToFitWidth = YES;
-    theyLabel.textAlignment = NSTextAlignmentCenter;
-    theyLabel.minimumScaleFactor = 0.3f;
-    [self addSubview:theyLabel];
+    [self.theyLabel removeFromSuperview];
+    self.theyLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width / 2, 0.0, self.bounds.size.width / 2, 30.0)];
+    self.theyLabel.text = @"THEY";
+    self.theyLabel.adjustsFontSizeToFitWidth = YES;
+    self.theyLabel.textAlignment = NSTextAlignmentCenter;
+    self.theyLabel.minimumScaleFactor = 0.3f;
+    [self addSubview:self.theyLabel];
     
+    [self.weContracts removeFromSuperview];
     self.weContracts = [[UILabel alloc] initWithFrame:CGRectMake(0, 35, middleX, 20)];
     self.weContracts.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.weContracts];
+    [self.theyContracts removeFromSuperview];
     self.theyContracts = [[UILabel alloc] initWithFrame:CGRectMake(middleX, 35, middleX, 20)];
     self.theyContracts.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.theyContracts];
